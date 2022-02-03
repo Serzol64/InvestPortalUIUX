@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>InvestPortal</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+    <style>
+        .add-but{
+            text-align: center;
+            color: gray;
+            background-color: #bec4c6;
+            border: none;
+            font-size: 60%;
+            padding: 10px;
+        }
+        #promo > header .promo-header{
+            position: relative;
+            top: 40px;
+        }
+        
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-scrollbar{ opacity: 0;}
+        .swiper-button-prev, .swiper-button-next {
+            width: 6vw;
+            height: 390px;
+            margin-top: -11%;
+        }
+        #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+            height: 451px;
+            margin-top: -14%;
+        }
+        #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects{margin-left: 8%;}
+        
+        [data-text]:nth-last-child(1)::before, [data-text]:nth-last-child(3)::before, [data-text]:nth-last-child(5)::before, #news[data-text]::before{
+            color: white;
+        }
+        
+        
+        [data-text]:nth-last-child(1)::before{
+            left: 14%;
+            top: 47%;
+        }
+        [data-text]:nth-last-child(2)::before{
+            left: 30%;
+            top: 36%;
+        }
+        [data-text]:nth-last-child(3)::before{
+            left: 25%;
+            top: 33%;
+        }
+        [data-text]:nth-last-child(4)::before{
+            left: 18%;
+            top: 46%;
+        }
+        [data-text]:nth-last-child(5)::before{
+            left: 13%;
+            top: 20%;
+        }
+        #news[data-text]::before{
+            left: 8%;
+            top: 69%;
+        }
+        .footer { overflow: hidden; } 
+        @media all and (max-width: 414px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 2%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -2%;
+            }
+            #investsearch > header .add-but {
+                width: 50%;
+            }
+            #investsearch > header a {
+                margin-left: 52%;
+                font-size: 60%;
+            }
+            #promo > header .links {
+                top: -49px;
+                left: 46vw;
+                font-size: 70%;
+            }   
+        }
+        @media all and (min-width: 414px) and (max-width: 600px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 3%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 1%;
+            }             
+        }
+        @media all and (min-width: 600px) and (max-width: 768px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 5%;
+            }  
+            
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 0%;
+            } 
+            #investsearch > main.swiper-container .popular-objects .popular-object {
+                height: 500px;
+            }
+        }
+        @media all and (min-width: 768px) and (max-width: 800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8%;
+            }
+            #estate > main #slider-view-adaptive .estat {
+                height: 220px;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object { 
+                width: 28%; 
+                height: 365px;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+                font-size: 65%;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object main img {
+                height: 153px;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 6%;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
+                height: 60px;
+            }
+        }
+        @media all and (min-width: 800px) and (max-width: 960px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+        }
+        @media all and (min-width: 960px) and (max-width: 1024px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+        }
+        @media all and (min-width: 1024px) and (max-width: 1280px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1366px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1366px) and (max-width: 1440px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1440px) and (max-width: 1536px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (max-width: 1600px){}
+        @media all and (max-width: 1920px){}
+        @media all and (min-width: 1920px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="header_top">
+            <div class="ht_header">
+                <img src="images/icons/investportal.png" alt="InvestPortal" />
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            </div>
+        </div>
+        <div id="header_bottom">
+            <div class="hb_bottom">
+                <header>
+                    <div class="welcome-link">
+                        <a href="">How the start</a>
+                    </div>
+                    <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
+                        <main>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </main>
+                        <footer>
+                            <div class="user-services">
+                                <div>
+                                    <a href="">Join/Login</a>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
+                                </div>
+                            </div>
+                            <div class="menu-show">
+                                <a href=""><i class="fas fa-bars" style="color: #0079bf;"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </header>
+                <footer>
+                    <nav>
+                        <a href="" id="active">Investment objects</a>
+                        <a href="">Investors</a>
+                        <a href="">Services</a>
+                        <a href="">Experts</a>
+                        <a href="">Analytics</a>
+                        <a href="">About</a>
+                        <a href="">News</a>
+                        <a href="">Events</a>
+                        <a href="" id="menu-image"><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></a>
+                        <a href="" id="menu-image"><i class="fas fa-search" style="color: #0079bf;"></i></a>
+                    </nav>     
+                </footer>
+            </div>
+        </div>
+        <div id="header_bottom_adaptive">
+            <header>
+                <ul class="adaptive-buttons">
+                    <li><i class="fas fa-bars" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-search" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-user-check" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></li>
+                </ul>
+            </header>
+            <footer>
+                <section id="adaptive-window" class="menu" style="display: none;">
+                    <header>
+                        <div class="welcome-link">
+                            <a href="">How the start</a>
+                        </div>
+                        <div class="exchange-selector">
+                            <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                              <option value="usd">USD</option>
+                              <option value="eur">EUR</option>
+                           </select>
+                        </div>
+                    </header>
+                    <main>
+                        <nav>
+                            <div class="active"><a href="">Investment objects</a></div>
+                            <div><a href="">Investors</a></div>
+                            <div><a href="">Services</a></div>
+                            <div><a href="">Experts</a></div>
+                            <div><a href="">Analytics</a></div>
+                            <div><a href="">About</a></div>
+                            <div><a href="">News</a></div>
+                            <div><a href="">Events</a></div>    
+                        </nav>
+                    </main>
+                    <footer>
+                        <center>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </center>
+                    </footer>
+                </section>
+            </footer>
+        </div>
+    </header>
+    <main class="main">
+        <section id="promo" class="section">
+            <header>
+                <div class="promo-header">
+                    <hr style="position: relative; top: -12%;" width="37px" color="#0079bf" size="4" align="left">
+                    <h2 style="color: #ffffff;font-size: 160%;">Investments</h2>
+                    <strong style="color: #ffffff;font-size: calc(161%/2);margin-top: -35px;">objects and projects</strong>
+                    <button class="add-but">Add Object</button>
+                    <div class="links">
+                        <a href=""><strong>Entire Offer</strong>(17 214)</a>
+                        <a href=""><strong>Type Object</strong>(37)</a>
+                    </div>
+                  </div>
+                <div class="marketing-info">
+                    <header class="banner-block">
+                        <img src="images/advbanner.jpg" alt="Реклама">
+                    </header>
+                    <footer>
+                        <ul>
+                            <li>Objects & Projects: 3657</li>
+                            <li>Requests: 596</li>
+                            <li>Services: 857</li>
+                            <li>Users: 10467</li>
+                        </ul>
+                    </footer>
+                </div>
+            </header>
+            <main class="swiper-container">
+                <div class="promo-feed swiper-wrapper">
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Hotels</strong>(56)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Spain
+                                </span>
+                                <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                    <span>Goif-hotel</span>
+                                    <span>&dollar; 4 000 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Factorys</strong>(92)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Austria
+                                </span>
+                                <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
+                            </main>
+                            <footer>
+                            <div class="info">
+                                    <span>Austria, a plant for the production of sausages...</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 10 300 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div> 
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Restuarants</strong>(18)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Portugal
+                                </span>
+                                <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 2 800 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Hotels</strong>(56)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Spain
+                                </span>
+                                <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                    <span>Goif-hotel</span>
+                                    <span>&dollar; 4 000 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Factorys</strong>(92)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Austria
+                                </span>
+                                <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Austria, a plant for the production of sausages...</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 10 300 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Restuarants</strong>(18)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Portugal
+                                </span>
+                                <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 2 800 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Hotels</strong>(56)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Spain
+                                </span>
+                                <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                    <span>Goif-hotel</span>
+                                    <span>&dollar; 4 000 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Factorys</strong>(92)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Austria
+                                </span>
+                                <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
+                            </main>
+                            <footer>
+                            <div class="info">
+                                    <span>Austria, a plant for the production of sausages...</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 10 300 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <div class="promoblock-content">
+                            <header>
+                                <a href=""><strong>Restuarants</strong>(18)</a>
+                            </header>
+                            <main>
+                                <span class="location">
+                                    Portugal
+                                </span>
+                                <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                    <span>&nbsp;</span>
+                                    <span>&dollar; 2 800 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                     </div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </main>
+        </section>
+        <section id="news" class="section" data-text="News">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>News</h2>
+                <a href="">All news</a>
+            </header>
+            <main>
+                <header id="slider-controller-adaptive"><img src="images/icons/slider-contorls/back.png" alt="Назад"></header>
+                <header id="slider-controller">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view-adaptive">
+                       <div class="news">
+                            <a href="">Cash is slowly dying. These are the companies replacing it</a>
+                            <p class="descr">
+                                The pandemic has accelerated the demise of cash because of infection concerns and that's great news for Square as well as Venmo owner PayPal.
+                            </p>
+                            <span class="date">
+                                10/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                            <p class="descr">
+                                Pompeo suggested the possible move during an interview with Fox News' Laura Ingraham, adding that "we're taking this very seriously.
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Black Friday as we know it is finally dead</a>
+                            <p class="descr">
+                                Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day itself, jostling for the mad dash into their favorite shops to grab Black Friday doorbuster deals on flatscreen TVs, diamond necklaces, holiday toys, winter
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Chinese Express is gaining momentum</a>
+                            <p class="descr">
+                                China's macro indicators for the first two months grew by a third at once
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Budget investments learn discipline</a>
+                            <p class="descr">
+                                The white house summed up the results of the implementation of the FAIP and Federal target program in 2020
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Cybersecurity will be offered to investors</a>
+                            <p class="descr">
+                                Positive Technologies plans to launch an IPO
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Telegram raised $1 billion on the placement of bonds at 7% per annum</a>
+                            <p class="descr">
+                                The company's five-year convertible dollar bonds were placed on March 12. Experts call the results of the placement not as impressive as expected
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Musk became the "tech king" of Tesla. And notified the SEC about it</a>
+                            <p class="descr">
+                                Elon Musk officially received the title of "tech king" of the company. Zack Kirkhorn, the chief financial officer of Tesla, became the "master of coin" — this title was worn by the treasurers from the TV series "Game of thrones".»
+                            </p>
+                            <span class="date">
+                                06/06/2020
+                            </span>
+                        </div>
+                        <div class="news" id="hide">
+                            <a href="">Roche to buy covid-test maker for $1.8 billion</a>
+                            <p class="descr">
+                                Roche has signed an agreement to buy the American manufacturer of diagnostic tests GenMark Diagnostics
+                            </p>
+                            <span class="date">
+                                06/06/2020
+                            </span>
+                        </div>
+                </main>
+                <main id="slider-view">
+                    <div class="news-feed">
+                        <div class="news">
+                            <a href="">Cash is slowly dying. These are the companies replacing it</a>
+                            <p class="descr">
+                                The pandemic has accelerated the demise of cash because of infection concerns and that's great news for Square as well as Venmo owner PayPal.
+                            </p>
+                            <span class="date">
+                                10/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                            <p class="descr">
+                                Pompeo suggested the possible move during an interview with Fox News' Laura Ingraham, adding that "we're taking this very seriously.
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">Black Friday as we know it is finally dead</a>
+                            <p class="descr">
+                                Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day itself, jostling for the mad dash into their favorite shops to grab Black Friday doorbuster deals on flatscreen TVs, diamond necklaces, holiday toys, winter
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-feed" id="hide">
+                        <div class="news">
+                            <a href="">Chinese Express is gaining momentum</a>
+                            <p class="descr">
+                                China's macro indicators for the first two months grew by a third at once
+                            </p>
+                            <span class="date">
+                                08/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">Budget investments learn discipline</a>
+                            <p class="descr">
+                                The white house summed up the results of the implementation of the FAIP and Federal target program in 2020
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">Cybersecurity will be offered to investors</a>
+                            <p class="descr">
+                                Positive Technologies plans to launch an IPO
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                    </div>
+                    <div class="news-feed" id="hide">
+                        <div class="news">
+                            <a href="">Telegram raised $1 billion on the placement of bonds at 7% per annum</a>
+                            <p class="descr">
+                                The company's five-year convertible dollar bonds were placed on March 12. Experts call the results of the placement not as impressive as expected
+                            </p>
+                            <span class="date">
+                                07/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">Musk became the "tech king" of Tesla. And notified the SEC about it</a>
+                            <p class="descr">
+                                Elon Musk officially received the title of "tech king" of the company. Zack Kirkhorn, the chief financial officer of Tesla, became the "master of coin" — this title was worn by the treasurers from the TV series "Game of thrones".»
+                            </p>
+                            <span class="date">
+                                06/06/2020
+                            </span>
+                        </div>
+                        <div class="news">
+                            <a href="">Roche to buy covid-test maker for $1.8 billion</a>
+                            <p class="descr">
+                                Roche has signed an agreement to buy the American manufacturer of diagnostic tests GenMark Diagnostics
+                            </p>
+                            <span class="date">
+                                06/06/2020
+                            </span>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller-adaptive"><img src="images/icons/slider-contorls/go.png" alt="Вперёд"></footer>
+                <footer id="slider-controller">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+        <section id="investsearch" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Investors in Search...</h2>
+                <button class="add-but" style="border: solid 2px gray;">Add Request</button>
+                <a href=""><strong>Entire Offer</strong>(17 214)</a>
+            </header>
+            <main class="swiper-container">
+                <div class="popular-objects swiper-wrapper">
+                    <div class="popular-object swiper-slide">
+                       <div class="popularobject-content">
+                            <header style="background-color: #4d93a7;">
+                                <h3>&dollar; 500 000</h3>
+                            </header>
+                            <main>
+                                <img src="http://www.form-at.ru/assets/images/Project/62-Neva_Towers/4.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Residential Real Estate Europe</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #92bd99;">
+                                <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://shopandmall.ru/photo/AFIMOLL_600.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 675992</span>
+                                    <span>Shopping Center, Parking, Restaurant, Gas Station Network...(30)</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #7c7fae;">
+                                <h3>&dollar; 1 000 000 - &dollar; 3 000 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://finance.bigmir.net/i/28/58/49/7/2858497/193a6da5d61f60b1b4d5fafebb0c9c3a-resize_crop_1Xquality_100Xallow_enlarge_0Xw_1200Xh_630.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Residential Real Estate Europe</span>
+                                    <span>Austria</span>
+                                </div>
+                                <a href="">+ Residence</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #e19780;">
+                                <h3>&lt;&dollar; 550 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://www.dnevno.hr/wp-content/uploads/2018/07/radisson-e1530709797130.png" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Hotel, Olive Grove, Spa-Center</span>
+                                    <span>Russia, Belarus</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #b15e87;">
+                                <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://shopandmall.ru/photo/AFIMOLL_600.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 675992</span>
+                                    <span>Shopping Center, Parking, Restaurant, Gas Station Network...(30)</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #4d93a7;">
+                                <h3>&dollar; 500 000</h3>
+                            </header>
+                            <main>
+                                <img src="http://www.form-at.ru/assets/images/Project/62-Neva_Towers/4.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Residential Real Estate Europe</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #e19780;">
+                                <h3>&lt;&dollar; 550 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://www.dnevno.hr/wp-content/uploads/2018/07/radisson-e1530709797130.png" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Hotel, Olive Grove, Spa-Center</span>
+                                    <span>Russia, Belarus</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #b15e87;">
+                                <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
+                            </header>
+                            <main>
+                                <img src="https://shopandmall.ru/photo/AFIMOLL_600.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 675992</span>
+                                    <span>Shopping Center, Parking, Restaurant, Gas Station Network...(30)</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <div class="popularobject-content">
+                            <header style="background-color: #4d93a7;">
+                                <h3>&dollar; 500 000</h3>
+                            </header>
+                            <main>
+                                <img src="http://www.form-at.ru/assets/images/Project/62-Neva_Towers/4.jpg" alt="Place">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>ID 487651</span>
+                                    <span>Residential Real Estate Europe</span>
+                                    <span>Spain, Italy, Portgugal</span>
+                                </div>
+                                <a href="">+ Services for Investors</a>
+                            </footer>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </main>
+        </section>
+        <section id="eventcalendar" data-text="Events" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Upcoming Events</h2>
+            </header>
+            <main>
+                    <div class="calendar">
+                      <header>
+                        <span class="date">12/07</span>
+                      </header>
+                      <main>
+                        <img src="images/icons/events/1.png" alt="Event" />
+                      </main>
+                      <footer>
+                        <span class="event-location">Moscoto, Expocenter</span>
+                        <a href=""> Black Friday as we know it is finally dead</a>
+                        <p class="descr">But the program has come under intense scrutiny in recent days after the Small Business Administration disclosed that the loans have been doled out not only to mom-and-pop businesses ...</p>
+                      </footer>
+                    </div>
+                    <div class="calendar">
+                        <header>
+                          <span class="date">14/07</span>
+                        </header>
+                        <main>
+                            <img src="images/icons/events/2.png" alt="Event" />
+                        </main>
+                        <footer>
+                          <span class="event-location">MesseMiinchen International</span>
+                          <a href="">China is investing billions in chipmaking to close the gap with its global rivals</a>
+                          <p class="descr">But the program has come under intense scrutiny in recent days after the Small Business Administration disclosed that the loans have been doled out not only to mom-and-pop businesses ...</p>
+                        </footer>
+                      </div>
+                      <div class="calendar">
+                        <header>
+                          <span class="date">18/08</span>
+                        </header>
+                        <main>
+                          
+                        </main>
+                        <footer>
+                          <span class="event-location">Institution Ferial Alicantina</span>
+                          <a href="">Airline bookings start to tumble again as coronavirus cases spike</a>
+                          <p class="descr">But the program has come under intense scrutiny in recent days after the Small Business Administration disclosed that the loans have been doled out not only to mom-and-pop businesses ...</p>
+                        </footer>
+                      </div>
+                      <div class="calendar">
+                        <header>
+                          <span class="date">23/09</span>
+                        </header>
+                        <main>
+                            <img src="images/icons/events/3.png" alt="Event" />
+                        </main>
+                        <footer>
+                          <span class="event-location">Espace Charenton</span>
+                          <a href="">Europe's recession will be even deeper than expected</a>
+                          <p class="descr">But the program has come under intense scrutiny in recent days after the Small Business Administration disclosed that the loans have been doled out not only to mom-and-pop businesses ...</p>
+                        </footer>
+                      </div>
+            </main>
+        </section>
+        <section id="services" data-text="Service" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Services</h2>
+                <strong>& Collaborations</strong>
+                <a href=""><strong>All Services</strong>(12 029)</a>
+                <button class="add-but">Add services</button>
+            </header>
+            <main>
+                <header id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <header id="slider-controller">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view-adaptive">
+                    <div class="service">
+                        <div class="service-content">
+                            <header>
+                                <h3>Excursion Guidance</h3>
+                            </header>
+                            <main>
+                                <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Sightseeng tours and flights</h4>
+                                <span class="location">Spain, Italy</span>
+                                <p class="descr">All types for transportation, delivery and passenger services</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Wellness services</h3>
+                            </header>
+                            <main>
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Resort service and shady park</h4>
+                                <span class="location">Sochi, Russia</span>
+                                <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Sports and healthy</h3>
+                            </header>
+                            <main>
+                                <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">New fitness generation</h4>
+                                <span class="location">Moscow, Russia</span>
+                                <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Excursion Guidance</h3>
+                            </header>
+                            <main>
+                                <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Sightseeng tours and flights</h4>
+                                <span class="location">Spain, Italy</span>
+                                <p class="descr">All types for transportation, delivery and passenger services</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Wellness services</h3>
+                            </header>
+                            <main>
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Resort service and shady park</h4>
+                                <span class="location">Sochi, Russia</span>
+                                <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Sports and healthy</h3>
+                            </header>
+                            <main>
+                                <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">New fitness generation</h4>
+                                <span class="location">Moscow, Russia</span>
+                                <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Excursion Guidance</h3>
+                            </header>
+                            <main>
+                                <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Sightseeng tours and flights</h4>
+                                <span class="location">Spain, Italy</span>
+                                <p class="descr">All types for transportation, delivery and passenger services</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Wellness services</h3>
+                            </header>
+                            <main>
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">Resort service and shady park</h4>
+                                <span class="location">Sochi, Russia</span>
+                                <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="service" id="hide">
+                        <div class="service-content">
+                            <header>
+                                <h3>Sports and healthy</h3>
+                            </header>
+                            <main>
+                                <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                            </main>
+                            <footer>
+                                <h4 class="title">New fitness generation</h4>
+                                <span class="location">Moscow, Russia</span>
+                                <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                            </footer>
+                        </div>
+                    </div>
+                </main>
+                <main id="slider-view">
+                    <div class="service-feed">
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-feed" id="hide">
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Wellness services</h3>
+                                </header>
+                                <main>
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Resort service and shady park</h4>
+                                    <span class="location">Sochi, Russia</span>
+                                    <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Wellness services</h3>
+                                </header>
+                                <main>
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Resort service and shady park</h4>
+                                    <span class="location">Sochi, Russia</span>
+                                    <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Wellness services</h3>
+                                </header>
+                                <main>
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Resort service and shady park</h4>
+                                    <span class="location">Sochi, Russia</span>
+                                    <p class="descr">ADLERKURORT is an abundance of sunlight, a delightful panorama of the Black Sea...</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-feed" id="hide">
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Sports and healthy</h3>
+                                </header>
+                                <main>
+                                    <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">New fitness generation</h4>
+                                    <span class="location">Moscow, Russia</span>
+                                    <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Sports and healthy</h3>
+                                </header>
+                                <main>
+                                    <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">New fitness generation</h4>
+                                    <span class="location">Moscow, Russia</span>
+                                    <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Sports and healthy</h3>
+                                </header>
+                                <main>
+                                    <img src="https://static.tildacdn.com/tild3465-6136-4666-a135-316666643962/13920123_17399612896.jpg" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">New fitness generation</h4>
+                                    <span class="location">Moscow, Russia</span>
+                                    <p class="descr">The rich global experience of the adidas & Reebok team...</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller-adaptive" >
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+                <footer id="slider-controller" >
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+        <section id="analytics" data-text="Analytic" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Analytics</h2>
+                <a href="">All material</a>
+            </header>
+            <main>
+                <header id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <header id="slider-controller">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view-adaptive">
+                    <div class="analytic">
+                        <h2>Big banks stand to earn hundreds of millions from PPP loan fees</h2>
+                        <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession...</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide" id="with-title-image">
+                        <img src="https://www.tripsavvy.com/thmb/g74NTtjr_48K_FLvrHC79VEP-xs=/1254x839/filters:fill(auto,1)/Seattle_Getty-56a1936f5f9b58b7d0c0c786.jpg" alt="Title image">
+                        <h2>America's largest banks are set to earn hundreds</h2>
+                        <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession...</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide">
+                        <h2>Fees range from 1% to 5%, depending on the loan.</h2>
+                        <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession, and was part of Washington's $2 trillion economic stimulus package.</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide">
+                        <h2>Butter wars: Kerrygold wins EU trademark battle</h2>
+                        <p class="descr">Kerrygold Irish Butter has long been a dominant brand in Germany, the US and elsewhere. An attempt by another Irish butter company to use the 'Kerry' part of its name abroad has failed in an EU court.</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide" id="with-title-image">
+                        <img src="https://static.dw.com/image/56618812_303.jpg" alt="Title image">
+                        <h2>Germany's VW announces job cuts as part of 'green' shakeup</h2>
+                        <p class="descr">The Wolfsburg-based auto giant says it is making savings to invest in new technologies...</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide">
+                        <h2>The conspiracy business: How to make money with fake news</h2>
+                        <p class="descr">Many conspiracy theories are peddled by people or organizations that are also selling something other than just crazy ideas. So is there profit in conspiracy theorizing?</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide">
+                        <h2>Mirror, tell me: how selfies appeared and how dangerous they are</h2>
+                        <p class="descr">Today marks the day without selfies. The boom of self-portraits in social networks occurred in the middle of the tenth years.</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide" id="with-title-image">
+                        <img src="https://cdn24.img.ria.ru/images/07e4/03/14/1568906175_0:137:2603:1601_1600x0_80_0_0_028248d96bbfcc6e078a6f654d41fbd4.jpg" alt="Title image">
+                        <h2>Bloomberg: Russia may raise key rate to 6% by the end of the year</h2>
+                        <p class="descr">The likely reasons for this decision are the growth of inflation and concerns...</p>
+                        <a href="">More</a>
+                    </div>
+                    <div class="analytic hide">
+                        <h2>Where in the Moscow region you can pay for travel "Troika"</h2>
+                        <p class="descr">Starting from February 1, 2021, you can use the Troika card on certain routes of buses in the Moscow region. At the initial stage, Troika is launched on Moscow Transport routes, where there are stationary validators.</p>
+                        <a href="">More</a>
+                    </div>
+                </main>
+                <main id="slider-view">
+                    <div class="analytic-feed">
+                        <div class="analytic">
+                            <h2>Big banks stand to earn hundreds of millions from PPP loan fees</h2>
+                            <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession...</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic" id="with-title-image">
+                            <img src="https://www.tripsavvy.com/thmb/g74NTtjr_48K_FLvrHC79VEP-xs=/1254x839/filters:fill(auto,1)/Seattle_Getty-56a1936f5f9b58b7d0c0c786.jpg" alt="Title image">
+                            <h2>America's largest banks are set to earn hundreds</h2>
+                            <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession...</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic">
+                            <h2>Fees range from 1% to 5%, depending on the loan.</h2>
+                            <p class="descr">The loan program is designed to help smaller American businesses survive the coronavirus recession, and was part of Washington's $2 trillion economic stimulus package.</p>
+                            <a href="">More</a>
+                        </div>
+                    </div>
+                    <div class="analytic-feed" id="hide">
+                        <div class="analytic">
+                            <h2>Butter wars: Kerrygold wins EU trademark battle</h2>
+                            <p class="descr">Kerrygold Irish Butter has long been a dominant brand in Germany, the US and elsewhere. An attempt by another Irish butter company to use the 'Kerry' part of its name abroad has failed in an EU court.</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic" id="with-title-image">
+                            <img src="https://static.dw.com/image/56618812_303.jpg" alt="Title image">
+                            <h2>Germany's VW announces job cuts as part of 'green' shakeup</h2>
+                            <p class="descr">The Wolfsburg-based auto giant says it is making savings to invest in new technologies...</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic">
+                            <h2>The conspiracy business: How to make money with fake news</h2>
+                            <p class="descr">Many conspiracy theories are peddled by people or organizations that are also selling something other than just crazy ideas. So is there profit in conspiracy theorizing?</p>
+                            <a href="">More</a>
+                        </div>
+                    </div>
+                    <div class="analytic-feed" id="hide">
+                        <div class="analytic">
+                            <h2>Mirror, tell me: how selfies appeared and how dangerous they are</h2>
+                            <p class="descr">Today marks the day without selfies. The boom of self-portraits in social networks occurred in the middle of the tenth years.</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic" id="with-title-image">
+                            <img src="https://cdn24.img.ria.ru/images/07e4/03/14/1568906175_0:137:2603:1601_1600x0_80_0_0_028248d96bbfcc6e078a6f654d41fbd4.jpg" alt="Title image">
+                            <h2>Bloomberg: Russia may raise key rate to 6% by the end of the year</h2>
+                            <p class="descr">The likely reasons for this decision are the growth of inflation and concerns...</p>
+                            <a href="">More</a>
+                        </div>
+                        <div class="analytic">
+                            <h2>Where in the Moscow region you can pay for travel "Troika"</h2>
+                            <p class="descr">Starting from February 1, 2021, you can use the Troika card on certain routes of buses in the Moscow region. At the initial stage, Troika is launched on Moscow Transport routes, where there are stationary validators.</p>
+                            <a href="">More</a>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+                <footer id="slider-controller">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+        <section id="estate" data-text="Investment" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Real Estate</h2>
+                <strong>as Investment</strong>
+                <a href="">Entire Offer</a>
+                <button class="add-but">Add object</button>
+            </header>
+            <main>
+                <header id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <header id="slider-controller">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view-adaptive">
+                    <div class="estat">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Spain</h3>
+                            </header>
+                            <main>
+                                <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>4 stars</span>
+                                    <span>&dollar; 230 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Russia</h3>
+                            </header>
+                            <main>
+                                <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>3 stars</span>
+                                    <span>&dollar; 36 955</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>USA</h3>
+                            </header>
+                            <main>
+                                <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>5 stars</span>
+                                    <span>&dollar; 920 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Spain</h3>
+                            </header>
+                            <main>
+                                <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>4 stars</span>
+                                    <span>&dollar; 230 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Russia</h3>
+                            </header>
+                            <main>
+                                <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>3 stars</span>
+                                    <span>&dollar; 36 955</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>USA</h3>
+                            </header>
+                            <main>
+                                <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>5 stars</span>
+                                    <span>&dollar; 920 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Spain</h3>
+                            </header>
+                            <main>
+                                <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>4 stars</span>
+                                    <span>&dollar; 230 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>Russia</h3>
+                            </header>
+                            <main>
+                                <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>3 stars</span>
+                                    <span>&dollar; 36 955</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="estat" id="hide">
+                        <div class="estat-content">
+                            <header>
+                                <h3>USA</h3>
+                            </header>
+                            <main>
+                                <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                            </main>
+                            <footer>
+                                <div class="info">
+                                    <span>5 stars</span>
+                                    <span>&dollar; 920 000</span>
+                                </div>
+                                <div class="raiting">
+                                    <span>Expert Raiting</span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </main>
+                <main id="slider-view">
+                    <div class="estat-feed">
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Spain</h3>
+                                </header>
+                                <main>
+                                    <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>4 stars</span>
+                                        <span>&dollar; 230 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Spain</h3>
+                                </header>
+                                <main>
+                                    <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>4 stars</span>
+                                        <span>&dollar; 230 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Spain</h3>
+                                </header>
+                                <main>
+                                    <img src="https://cdn.ostrovok.ru/t/640x400/content/f5/8f/f58fb7ca7e56c48052f2a427d67f2d3451e87ab1.jpeg" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>4 stars</span>
+                                        <span>&dollar; 230 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="estat-feed" id="hide">
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Russia</h3>
+                                </header>
+                                <main>
+                                    <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>3 stars</span>
+                                        <span>&dollar; 36 955</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Russia</h3>
+                                </header>
+                                <main>
+                                    <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>3 stars</span>
+                                        <span>&dollar; 36 955</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>Russia</h3>
+                                </header>
+                                <main>
+                                    <img src="https://avatars.mds.yandex.net/get-zen_doc/1887828/pub_5d417b7cf0d4f421aad1195c_5d41999acfcc8600ac796ab0/scale_1200" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>3 stars</span>
+                                        <span>&dollar; 36 955</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="estat-feed" id="hide">
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>USA</h3>
+                                </header>
+                                <main>
+                                    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>5 stars</span>
+                                        <span>&dollar; 920 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>USA</h3>
+                                </header>
+                                <main>
+                                    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>5 stars</span>
+                                        <span>&dollar; 920 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="estat">
+                            <div class="estat-content">
+                                <header>
+                                    <h3>USA</h3>
+                                </header>
+                                <main>
+                                    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/206614386.jpg?k=e975f809af0189152744426b5a72ffb983928653c235f927a14e6514ccb7247c&o=" alt="Hotel">
+                                </main>
+                                <footer>
+                                    <div class="info">
+                                        <span>5 stars</span>
+                                        <span>&dollar; 920 000</span>
+                                    </div>
+                                    <div class="raiting">
+                                        <span>Expert Raiting</span>
+                                        <div class="rating-mini">
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span> 
+                                            <span class="active"></span>	
+                                            <span class="active"></span>    
+                                            <span class="active"></span>
+                                            <span></span>    
+                                            <span></span>
+                                            <span></span>    
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+                <footer id="slider-controller">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+        <section id="reviews" data-text="Review" class="section">
+            <header>
+                <hr color="#0079bf" size="4" width="37px" align="left"/>
+                <h2>Reviews</h2>
+                <strong>and countries</strong>
+                <a href="">All material</a>
+            </header>
+            <main>
+                <header id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <header id="slider-controller">
+                    <img src="images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view-adaptive">
+                    <div class="review" id="with-title-image">
+                        <header>
+                            <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>Big banks stand to earn hundreds of millions from PPP loan fees</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwngwSBIFO5UNdycjzkUjIRFEq0n5YWKTOgsfbgKdoQ=s900-c-k-c0x00ffffff-no-rj" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>America's largest banks are set to earn hundreds</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>Fees range from 1% to 5%, depending on the loan.</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>Moscow’s financial support up nine-fold for high-tech sector</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://static.tildacdn.com/tild6266-3662-4632-a461-626665316665/sarb.png" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>300 million rubles were found for the repair of sidewalks in the historical part of the city.</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://storage.myseldon.com/yugo/ADBBEE61B27C1D29B22AE879ABA39FF4.png" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>The space for a beauty coworking in the center of Moscow will be leased for 10 years</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://www.speechpro.ru/upload/cache/e4/7b/e47b2dd1e1019c809f40357076556c56.jpg" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>Rostelecom paid 1.7 billion for software developer to fight Twitter and Telegram</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://www.business-vector.info/wp-content/themes/City_News/images/city.jpg" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>Business mission to the Republic of Uzbekistan: cooperation agreement signed between...</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                    <div class="review hide" id="with-title-image">
+                        <header>
+                            <img src="https://www.polymatica.ru/wp-content/uploads/2020/01/tadvisor.png" alt="Title image">
+                        </header>
+                        <main>
+                            <h3>E-commerce market growth by 82% to KZT596 bn</h3>
+                        </main>
+                        <footer>
+                            <a href="">More</a>
+                        </footer>
+                    </div>
+                </main>
+                <main id="slider-view">
+                    <div class="review-feed">
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>Big banks stand to earn hundreds of millions from PPP loan fees</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://yt3.ggpht.com/ytc/AAUvwngwSBIFO5UNdycjzkUjIRFEq0n5YWKTOgsfbgKdoQ=s900-c-k-c0x00ffffff-no-rj" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>America's largest banks are set to earn hundreds</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>Fees range from 1% to 5%, depending on the loan.</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="review-feed" id="hide">
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>Moscow’s financial support up nine-fold for high-tech sector</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://static.tildacdn.com/tild6266-3662-4632-a461-626665316665/sarb.png" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>300 million rubles were found for the repair of sidewalks in the historical part of the city.</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://storage.myseldon.com/yugo/ADBBEE61B27C1D29B22AE879ABA39FF4.png" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>The space for a beauty coworking in the center of Moscow will be leased for 10 years</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="review-feed" id="hide">
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://www.speechpro.ru/upload/cache/e4/7b/e47b2dd1e1019c809f40357076556c56.jpg" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>Rostelecom paid 1.7 billion for software developer to fight Twitter and Telegram</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://www.business-vector.info/wp-content/themes/City_News/images/city.jpg" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>Business mission to the Republic of Uzbekistan: cooperation agreement signed between...</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                        <div class="review" id="with-title-image">
+                            <header>
+                                <img src="https://www.polymatica.ru/wp-content/uploads/2020/01/tadvisor.png" alt="Title image">
+                            </header>
+                            <main>
+                                <h3>E-commerce market growth by 82% to KZT596 bn</h3>
+                            </main>
+                            <footer>
+                                <a href="">More</a>
+                            </footer>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller-adaptive">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+                <footer id="slider-controller">
+                    <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+    </main>
+    <footer class="footer">
+        <header>
+            <div class="logo">
+                <img src="images/icons/investportal-light.png" alt="InvestPortal" />
+            </div>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            <main>
+                <a href="" target="_blank"><img src="images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/4-foot.png" alt="SN" /></a>
+            </main>
+        </header>
+        <main>
+            <div id="category_menu">
+                <a href="#" class="catname">Low</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Search for Investors</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Analytics</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Evaluation and Audit</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+        </main>
+    </footer>
+    <div id="chat-lightbox" class="lightbox-closed">
+        <header>
+          <img src="https://img.icons8.com/windows/32/627182/macos-close.png" alt="Close"/>
+        </header>
+        <main class="chat">
+          <div id="header">
+            <div class="consultant-cont">
+              <img src="https://img.icons8.com/bubbles/50/000000/girl-with-compass.png" id="avatar" align="left"/>
+              <span id="firstname">Alise Kaminskaya</span>
+              <span id="staff">Caring consultant</span>
+            </div>
+          </div>
+          <div id="content">
+            <section id="message" data-eventer="sender">
+              <span>12:00</span>
+              <main>
+                Hello! On your portal, is it possible to issue a profitable loan for small businesses in electronic transactions with objects?
+              </main>
+            </section>
+            <section id="message" data-eventer="inbox">
+              <span>12:02</span>
+              <main>
+                Of course! In our database there are dozens of partner banks that are ready to help on our portal not only with obtaining a loan for SMEs, but with the introduction of a whole range of corporate banking services, depending on your business activity, for which you are going to buy an object;-)
+              </main>
+            </section>
+          </div>
+          <div id="footer">
+            <textarea id="message" placeholder="Input this message and but on Enter"></textarea>
+          </div>
+        </main>
+    </div>
+    <div id="auth-lightbox" class="lightbox-closed">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADT0lEQVRYhe2WQWwUZRTHf++b3cIFT6SJtE0UOHAoF/GsbDdAgqRLg7deDIkJNIqJXWC3G0xJ2qXUGjWRJnDgpCekpZgeStidclc52AQulRgEDTfgAGxn5nn4htKdGXa7qzf7v8xk3vve/zczb+Z7sKH/u6Sl7NKtHvwgh/AB8BbQE0buo9zDMI/HHJOZP/9bgFKlC3W+QPUokGqcrAEiV5HgJOPZP/49QLHaD/I9sAWkBjqLcA2jt3m+Yu90c7obz7yDaA5kALQDeIqRQcb3/tQ+wMjip2jwDYhBuIIxpxl7/17DNYWb2zHOJMoR0ACVz5jIfNc6QLHaD8yCKCInKe/9uqFxDN4dRjkPKhhz+HVPIhmgVOkiMHeALYh83rJ5PcQUyBPE7KL83l/RFJO4MDBnrTlX2jYHKGe+ApkBfQOC0aSUOEDpVg/wEUgNY07H4sXF4+QXOmPX8wudFBePx647/imQGqpHKVW6mgP4QQ5wQGdjDVeoDoFOk+6o1EHkFzpJd1RAp23OGo1llxGdA1L4kmsOAAcBUJmLRbyVH4EloHcVYtWcXmApzKlXQFhLDjYHENlhj94vsdjUgUes1LJ1EGvNV2pZpg48iq1L6c+2JjuaA6DbANjkPIzHQgicPuC30LgXuIvHvkRzgJQ8CM+61wGAJhZpprTT4Kf2LPSRYB0AYr/VF/62xFr5hU7wq8Bu7KtYAnah/o3ErwPA2/ymPdHYU40DqC7bY2pPonn0nUd7IgnCk3dtTZabAxjmAezGElEq/SHRhos2ps2J1rS1ROabA3jMAR7IAIWb2+tiE33TIEOxbl+FkCGbs0YFdycqOcDD+NejdsmNU6xeAvkY4SrlTPyOWtGIO4MyAFzkXOZYNJy8F/jeKPAU5Qgj7nDb5kU3H5o/xmOdewHA5P6HGBm0+znn24Iounlgwk5IOsiXmb+T0hoPJAX3E0S/BTEgMzj+KcaysU6OrNmJYdLeuQaInKCcufC69HWMZO4hkB/slio1u7HoNVR+ZRN2JHtBN8oehMNADkgDjxEdpNwX6/zWAACG3a10yBnQIZoOpXiIXAYzmjSAtAfwUqVKF4HTDxxC9G00HMuF+wT8jsg8xr/OePZB40Ib2tAr/QNOXDy1WmL6DAAAAABJRU5ErkJggg==" class="close">
+        <section class="module-page" data-screen="SignIn">
+            <header>
+              <h2>Sign in Investportal</h2>
+            </header>
+            <main>
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMzAiIGhlaWdodD0iMzAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iIzM0OThkYiI+PHBhdGggZD0iTTEwMy4yLDEwOC45MzMzM3YtMTEuNDY2NjdjMi41OCwtMS4yNzg1MyA5Ljk1ODgsLTEwLjA2MiAxMC43MzI4LC0xNi45MjQ4YzIuMDI5NiwtMC4xNTQ4IDUuMjE3MzMsLTIuMDE4MTMgNi4xNTc2LC05LjM3NGMwLjUwNDUzLC0zLjk1MDI3IC0xLjUwMjEzLC02LjE2OTA3IC0yLjcxNzYsLTYuODY4NTNjMCwwIDMuMDI3MiwtNS43NTA1MyAzLjAyNzIsLTEyLjY5MzZjMCwtMTMuOTIwNTMgLTUuNDYzODcsLTI1LjggLTE3LjIsLTI1LjhjMCwwIC00LjA3NjQsLTguNiAtMTcuMiwtOC42Yy0yNC4zMjA4LDAgLTM0LjQsMTUuNjAwNCAtMzQuNCwzNC40YzAsNi4zMjk2IDMuMDI3MiwxMi42OTM2IDMuMDI3MiwxMi42OTM2Yy0xLjIxNTQ3LDAuNjk5NDcgLTMuMjIyMTMsMi45MjQgLTIuNzE3Niw2Ljg2ODUzYzAuOTQwMjcsNy4zNTU4NyA0LjEyOCw5LjIxOTIgNi4xNTc2LDkuMzc0YzAuNzc0LDYuODYyOCA4LjE1MjgsMTUuNjQ2MjcgMTAuNzMyOCwxNi45MjQ4djExLjQ2NjY3Yy01LjczMzMzLDE3LjIgLTUxLjYsNS43MzMzMyAtNTEuNiw0NS44NjY2N2gxMzcuNmMwLC00MC4xMzMzMyAtNDUuODY2NjcsLTI4LjY2NjY3IC01MS42LC00NS44NjY2N3oiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==" data-service="login" />
+              <div class="module-form">
+                <form action="#" method="post">
+                  <div><label for="investportalid">E-mail, login or phone number</label>
+                    <input type="text" name="investportalid" /></div>
+                  <div><label for="investportalidaccess">Password</label>
+                    <input type="password" name="investportalidaccess" /></div>
+                </form>
+                <button id="form-submit" data-datacontrol="facebook"><i class="fab fa-facebook"></i>Sign in Facebook</button>
+                <button id="form-submit">Sign in</button>
+              </div>
+            </main>
+            <footer>
+              <center>
+                <ul>
+                    <li data-screenlocation="SignUp">Join in</li>
+                    <li data-screenlocation="Forgot">Forgot password?</li>
+                </ul>
+              </center>
+            </footer>
+        </section>
+        <section class="module-page" data-screen="SignUp">
+            <header>
+              <h2>Create Investportal account</h2>
+            </header>
+            <main>
+              <ul id="reg-content">
+                <li data-signstep="0">
+                  <div id="atettion">
+                <span>Don't waste time entering data in the form! In a few seconds, become a new user of the portal, thanks to the data of your account in Facebook.</span>
+                <button id="form-submit" data-datacontrol="facebook"><i class="fab fa-facebook"></i>Fast join with Facebook</button>
+              </div>
+                  <form action="#" method="post">
+                  <div><label for="fn">First name</label>
+                    <input type="text" name="fn" /></div>
+                    <div><label for="sn">Second name</label>
+                    <input type="text" name="sn" /></div>
+                    <div><label for="username">Login</label>
+                    <input type="text" name="username" /></div>
+                  </form>
+                </li>
+                <li data-signstep="1" style="display: none;">
+                  <form action="#" method="post">
+                  <div><label for="user-email">E-Mail</label>
+                    <input type="email" name="user-email" /></div>
+                    <div><label for="user-password">Password</label>
+                    <input type="password" name="user-password" /></div>
+                    <div><label for="confirm-password">Confirm the password</label>
+                    <input type="password" name="confirm-password" /></div>
+                    <div><label for="phone">Phone number</label>
+                    <input type="tel" name="phone" /></div>
+                  </form>
+                </li>
+                <li data-signstep="2" style="display: none;">
+                  <form action="#" method="post">
+                  <div><label for="region">Your country</label>
+                    <select name="region" id="region">
+                      <option>Any Country</option>
+                    </select></div>
+                    
+                    <span id="form-note">
+                      Choosing a country when registering a portal account, it will be easier for you with the help of our services not only to sell and buy objects, but also to look for an investor suitable for you on your territory and receive personalized regional selections based on your activity on the portal!
+                    </span>
+                    
+                  </form>
+                </li>
+                <li data-signstep="3" style="display: none;">
+                  <form action="#" method="post">
+                  <div><label for="confirm-code">Confirm code</label>
+                    <input type="number" name="confirm-code" /></div>
+                    
+                  </form>
+                  <span id="form-note">
+                      An SMS message will be sent to your phone number with a confirmation code for registering a portal account. Enter the received code in this field so that you can complete the registration process later.
+                    </span>
+                </li>
+              </ul>
+              <div id="reg-footer">
+                <button id="form-submit">Countine</button>
+              </div>
+            </main>
+            <footer>
+                <center>
+                    <ul>
+                        <li data-screenlocation="SignIn">Sign in</li>
+                        <li data-screenlocation="Forgot">Forgot password?</li>
+                    </ul>
+                </center>
+            </footer>
+        </section>
+        <section class="module-page" data-screen="Forgot">
+            <header>
+              <h2>Forgot account password</h2>
+            </header>
+            <main>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAIHElEQVRogdWYe3CU5RWHn/PubiCKRmoRJK1Kkw0q9VJ3E6VQxGmtwuBdax2rVipsAur0ivbGrAWLdKydcZRkQWun2kLBC7XasWiFsTqMZNfWUkGyCYoColUhAgLZ/b5f/9jduKThEsg6yflnd87vfOd9n+897+0zPmUbH18e3Dm8cjyeXS4UBavEGArsADaaeBX0bGZgaOm/bhyx7WDzWum63MXicrVD09fLbBbwuYN44mPBHzA3OxWreutAwZ8KSN2C10fIDyyRiORdqw0e9XyWyfPe6hjqvT+ovew4L2snguowvgnU5WN3C92JfTQ3FYtm9tVGyUGija1jQE9gDAHagNuTserHMNP+nosk1p1suLmIi/OuF1w2e/mqm0/5oLv4koLUNrWME/YMUI7x5K5sx7WvTR+1oyc5Ion0100sAE4QpAPOTVo1taqla1zJQM5pXHuSZ8FXBINB85Nbwg3Eze8a96X71p9oLnNCIBjcnQ36b/5zcvi/XWNq739jmALZP5Mrtw/wvTHJaSevKz2IZNFE+gWwscieG/Tu2xNWxM/LFuTx8eXB7cMqbzKzWxGndHm2Wc4egvYHiufE6HveLs8cuXtRvtTWd8hG/7uh+r2SgtQ2pq+V8Qhi8x6VfXH1tBO3dmq5t7sUODvv2gK0IJVjNhI4Ot+ztfg2JdlQ/dJeMEfs/jswGnhpxGeqz13yDfMAXClA5DQj98/mFEPU3bf2WAWz/8hDtMk0KbmlujJZHz432VBTt62D45CuFKxBnILp+Uii9YbC8yu///ldXhmXYGwAxrz5YfrmgtbrIxJJpM8ykQJ7Z1uHRrTeGt5T0KJN6WXA+cDLoWDHxJU3jfqw+xzJkHHMbKQZgEya3NxQ87tP8rRNBP9pYLt5Nqp5evXbvT4i5tsEAJO/bG+ItonA+YjNHbKL9wUBkIpFM8lY9W0G0wGT2fxIom1sQU/WV/0VeBQ4yg/wAyhFaZnOBBD2wt6CX5/71S+KJ+n+rLk+PM/EXUDI5C+ovjc9oKA5/NkAhm6IJDYf0fsgYjiAmdvwiU8GjAN853mP9iSd79pnAv8BTq4o040F/6r6ka8CK4FjzN95RQlGhIEAvqlzzxi1ZE0IqAC272tn3pelYtGMiVm51BYr1mT2GADOxpRi1foIwInOMhiy5j0fyALloxa/VtbThL5rfwLYCZxRd9/aYwt+J78ZwFC010EEaQAfnVHw5TfDtUDZEdsGRHuaMxWLZgxWA+aFyjo3UN+0BkCipvdXLSkFYFhdF+UZADx/6qHkFeQ2vqKSDWT8wsGzvNdBQuipXLuaUFwGMiUAT2bfqp3fVtujpHE5g1MBgp7XuYjsDoQCAAbbex1kZcPITaDngXIvFPp2wZ+Khdsw7gUC8v1HiiEPZLXD0pcKBgvW5PLnrAydCiDYUJIjCgTuATDph2c+9MYxBe+ubEdhKa1RMPjUwcBEEus+6+N+DeDQ3cWaGeMABM0lAcnvvMuBYcE93pyC/7Xpo3Z42cAkxGbBOV4wuPKsea2RfeU5vbH1OJN7ytBJoBeP3LLp4U4xLie4EsDg6ZLdR6KN6e9h3AP4+FyWnBZ+sqBFEm0nGN5fkJ1ObhL/HtmDcttWpWLRzGnzNgweGMhcJREHHQ+0dci+XHwiqG1qvVpokWAT1j6iJCDRxpYrMFsIhPKunQ43flV9VbIQM+bB14/akw3cgbgFCObdHrmvKRWdyWTPyXnXpGIj3y96ERUmPwVUYdycjIXv73WQYgiDuTKGI64D3jXnLmqeWtVcHF83v61Gvj9ZcBnwhTzUx6AVMrcgFateWhx/1WIF3vgw/STYROCVQVs2nr0ifl62V0Fqm1ouF7YICJm4q7kh/ONIIhlCFY8bTMp1kBuS9eFuz1tXLVZg/db1g1Kxqvbu9PHx5cEdwyrvB5sKtAdwtS/XV6WhF+8j3UEUtEgiGTJVPABcDwiYFwp2zNzfUb6rnTZvw+CBrmOh4AJgF2JisiG8oqD3Csj+IDpjGtNzZNxe5PrA0KxgMPPw/oAiiWTIqWKKRDz3ScneMWeXdC3Rwwapa2y9zDf96SAhsogZYBMxfS0vZ8CWCT1v0gZftskCHO2kSh83ztBFQGG/eTYQYPLLU8Ibu7ZxWCA9hoBrCvOjtqn1QuHfAnYhB7jgmZGS3Mz8/tR9zKFCRBKtl5q0+FAgim1047rKjAW+KjTWUCViCGZbTXrHd241aGkqFm47UH8OCSR/+X8cGCB0d6q+5kf/F5NomY3sp4AHui5ZX7PwUNo6WOsxSF+EgG5AzmpsmeTMfg4EkX6ZbKh5rLOD89IX41gClB1OOZXC9gKJNKVvM7iryCUZ01OxcGNfhoAikEgifbuJOYAM4j7syUMJs/lIN/ZVCMiDRBtbZmA2F/AMTWmur3kIIJpIfxfxm87gPgoB4CKJ1kvzEEJMLUAAIDaSvyv3ZQgAh/QrAIN4siH824IQbUpfCSwEAn0dAsAZDAHwZC8WnEUQwf4AAWC1Ta2zhH4G7JC5CSZ/GP0MAsCIy0WPb12AmEzua94A+hkEFJbfuFx0aNvfCifS/gYB+VNndHjbBZi+AiB0d3cQ0UTL7DyEB7q+L0EAWF3TujN83EqgvD+ORMGcT2AmOYjG/goBudIaDeA7f2ZXsb9AADjQAICggoOLhf4EAWDRpvQi4GrQi84FvrPb07Yy4w5QPf0EAiBovn6Cs/OEjfV9f13ZJwf7DuDa/gAB4Jqn1az3zdWa+KPBVmAX8KxM4/oLBMD/AM5vKB5QQzEvAAAAAElFTkSuQmCC" align="center" data-service="forgot" />
+              <ul id="reg-content">
+                <li data-signstep="0">
+                  <form action="#" method="post">
+                  <div><label for="investportal-id">E-mail, login or phone number for access restore</label>
+                    <input type="text" name="investportal-id" /></div>
+                </form>
+                </li>
+                <li data-signstep="1" style="display: none;">
+                  <span id="form-note">Within some time, you will receive an SMS message with the access code provided by us. You need to start the process after entering the code from this message into the form!</span>
+                  <form action="#" method="post">
+                  <div><label for="restore-code">Restore code</label>
+                    <input type="number" name="restore-code" /></div>
+                </form>
+                </li>
+                <li data-signstep="2" style="display: none;">
+                  <div id="atettion"><span>You can input new password for Investportal account access restore</span></div>
+                  <form action="#" method="post">
+                  <div><label for="new-password">Input new password</label>
+                    <input type="password" name="new-password" /></div>
+                    <div><label for="confirm-new-password">Confirm the password</label>
+                    <input type="password" name="confirm-new-password" /></div>
+                </form>
+                </li>
+              </ul>
+              <div id="reg-footer">
+                <button id="form-submit">Countine</button>
+              </div>
+            </main>
+            <footer>
+              <center>
+                <ul>
+                    <li data-screenlocation="SignUp">Join in</li>
+                    <li data-screenlocation="SignIn">Sign in</li>
+                </ul>
+              </center>
+            </footer>
+        </section>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/addons/authmodule/ui/form.js"></script>
+    <script src="js/addons/authmodule/ui/screen.js"></script>
+    <script src="js/addons/authmodule/services/addons/fb.js"></script>
+    <script src="js/addons/authmodule/services/addons/sendCode.js"></script>
+    <script src="js/addons/authmodule/services/signin.js"></script>
+    <script src="js/addons/authmodule/services/signup.js"></script>
+    <script src="js/addons/authmodule/services/forgot.js"></script>
+    <script src="js/addons/authmodule/script.js"></script>
+    <script>
+        let sliders = ['#promo > main.swiper-container','#investsearch > main.swiper-container'];
+
+        for (let index = 0; index < sliders.length; index++) {
+            const slider = sliders[index];
+
+            var swiper = new Swiper(slider, {
+                spaceBetween: -15,
+                slidesPerView: 'auto',
+                loop: true,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: '.swiper-pagination'
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true
+                }
+            });
+            
+        }
+
+        
+       
+
+    
+
+        
+
+    </script>
+</body>
+</html>
