@@ -130,3 +130,9 @@
 		}
   #eventProgram > *[data-type='todo'] li .moreInfo {margin-left: 89%;}
 }
+@media all and (min-width: 1536px){
+	#eventProgram > *[data-type='todo'], #eventProgram > *[data-type='todo'] li {
+		width: 100%;
+		margin-left: -3%;
+		}
+}
