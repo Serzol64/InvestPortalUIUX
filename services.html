@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>InvestPortal</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div id="header_top">
+            <div class="ht_header">
+                <img src="images/icons/investportal.png" alt="InvestPortal" />
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            </div>
+        </div>
+        <div id="header_bottom">
+            <div class="hb_bottom">
+                <header>
+                    <div class="welcome-link">
+                        <a href="">How the start</a>
+                    </div>
+                    <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
+                        <main>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </main>
+                        <footer>
+                            <div class="user-services">
+                                <div>
+                                    <a href="">Join/Login</a>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
+                                </div>
+                            </div>
+                            <div class="menu-show">
+                                <a href=""><i class="fas fa-bars" style="color: #0079bf;"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </header>
+                <footer>
+                    <nav>
+                        <a href="" id="active">Investment objects</a>
+                        <a href="">Investors</a>
+                        <a href="">Services</a>
+                        <a href="">Experts</a>
+                        <a href="">Analytics</a>
+                        <a href="">About</a>
+                        <a href="">News</a>
+                        <a href="">Events</a>
+                        <a href="" id="menu-image"><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></a>
+                        <a href="" id="menu-image"><i class="fas fa-search" style="color: #0079bf;"></i></a>
+                    </nav>
+                    
+                </footer>
+            </div>
+        </div>
+        <div id="header_bottom_adaptive">
+            <header>
+                <ul class="adaptive-buttons">
+                    <li><i class="fas fa-bars" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-search" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-user-check" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></li>
+                </ul>
+            </header>
+            <footer>
+                <section id="adaptive-window" class="menu" style="display: none;">
+                    <header>
+                        <div class="welcome-link">
+                            <a href="">How the start</a>
+                        </div>
+                        <div class="exchange-selector">
+                            <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                              <option value="usd">USD</option>
+                              <option value="eur">EUR</option>
+                           </select>
+                        </div>
+                    </header>
+                    <main>
+                        <nav>
+                            <div class="active"><a href="">Investment objects</a></div>
+                            <div><a href="">Investors</a></div>
+                            <div><a href="">Services</a></div>
+                            <div><a href="">Experts</a></div>
+                            <div><a href="">Analytics</a></div>
+                            <div><a href="">About</a></div>
+                            <div><a href="">News</a></div>
+                            <div><a href="">Events</a></div>    
+                        </nav>
+                    </main>
+                    <footer>
+                        <center>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </center>
+                    </footer>
+                </section>
+            </footer>
+        </div>
+    </header>
+    <main class="main" style="background-color:   #eff3f4;">
+        <section class="section" id="link-switcher">
+            <a href="index.html">Main</a> <span id="delimeter"> / </span> <a href="services.html" class="active">Services</a>
+        </section>
+        <section class="section" id="services-public">
+			<h2 id="title">Services list and search</h2>
+			<div id="services-list">
+			  <header id="search">
+				<input type="search" name="servicesQ" placeholder="Services search..."/>
+				<div class="last-example">
+				  Example: <span id="exmpl">Register as an expert</span>
+				  
+				  <div class="categories">
+					<a href="" class="active-category">
+					  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC00lEQVRYhe2WO0wUURSGvzPDjqAmgDHEB43CxgeoibtWYCHWlhqxEKMJi6FCjBBD7AzRWuMOxldh1FjaGWJiFBsgBhRfC4UhROMLCoW4sPdY7C7PXXd2XbTxb2bm3nPP/fPff8658B//GJJuIhiOaA753qhM1/WHtn/wusDKYZPfYauo71HAfbXe64KMCvQ1+dPGpIpPwLMS+VYA4CVxJR7uvDJc9tcJxBzqgBdAtSP6ONNx5J3A8+P+zzGH/QkSGT1RkG8CwXBEiS4Y2irqewjsSBW/HB5Ihep0E3lTIN3fkqme/C0F8kcgGI5ojlUyJTwfQcDt81mmuDO5c9AdvqBMdPSHgtPJmKrLQ6tXWivqET1sYIvAulnibqR5aiZ6a6i56vv8vJ4VEC05r0Lr7IDqGcsUdyY/d18eriyynUEV7VKoE9gI2HPxXCqynYGAG6nIiQCqx+JPqRVLauKvnJhNZOtVYJPCACr1PjXlE1EKfWrKQY8oDACbLaVrflrvf4HE+4bYaG9j5TOW9pEaACsmB3qbK0eTg8MwBtwJuCM9qHmvUJsTAYFrCm1qtGdPODKuws2p0mj70KGqZNnxARhbHwTcdxetGevJeEw/ldpSZgrMXiHWluDs5ERgck30XOE3x4jSoMIGlJaicQfg1CKiu1C5rbZSYoOiiKZvqJ49MHSoKtrf5D/bd9K/MekBlIbFcSISQqVb49L/VBhDpVtEQqnyelYgGI6MAyViSQ3GFCTkXFIPDHKv/2RF1+LxgDtSLKibMwGEGygtarRnzn9yfUmcmscZPJAbganSaPvKr45J1gKBC6s+jnYs5ZmdBzwTSLj9dDAcaQXobfK3p4oTkZAaDqroNoG1Cl9E5bVY3Ff9kyNI4Dd3xGnA58EDC24L+byQPAX2ZfaAPsmKQLadL4MHRsTQmBWBP0QM+AD6VkXuThdN3hk8uuvHMu/5H9nhF5JAPQ7UqmmhAAAAAElFTkSuQmCC">
+					  <strong>Investment and Objects</strong>
+					</a>
+					<a href="">
+					  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAByUlEQVRYhe2Wv0tcQRDHP/Oel0qLWOo1wZz5A3wi+gcoSQpF0lr71CIYMChESyEYEggEX2In9oIkpDCt+OssLPXOJkHwD7CJsjsp3imnOfNuX+5ihPvCNjM7s9/9ziw70MAtQ9IGdkeHzxWZAVDR+b3Rzvf/jEDXx+KQqK5eMVoG8+O5tZoRCKKCJgV70KeeiFrdSNqbD3MVz2pKCvwTdsLcJkAQFVLnSCRwwfxCkUo3Kbdd35ekpOfGt/ZwLkE1veGCu6PATV38t7g7CpSjZ6mQNYZ3wEBskXUfmd4OO5zfo7MCpcP3gWdAS7x02GC3ehcP2utOoHTzVoXPGbXZjNosyBeg9Uy8t6750pRgAOCe2nBz7NExQPeH4pj6fJfLklSPNE2oALbJq8mrSKGAfAMdNkainqVCCGCMjUr/2nrdCfjItEH7QZ8aw48SKYBTa+L5wAXOJbCqI0BzBVez+DpSVwJBdPRERWeBn4JMqZy3qZy3IfoytjEXfCo+dsnpWALzAgRBXu2GD9+UORaCxUNB5DVWJ4Gv1WZ0LIF0xTz8ld88NrMMIBC4ZHRSIB/m7t/k2514cEKKGfP//4xqPYBcx60r0EADvwAU+pQKJIQVIwAAAABJRU5ErkJggg==">
+					  <strong>Proffesional Specialisations</strong>
+					</a>
+					<a href="">
+					  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABB0lEQVRYhe2UwWrCQBCGvzF6FCyecuwh1FuF+EqC6OMIxbyCfYIinouYc2jxWsRDezBnZXtaSIKNySbYCPvdspmdf/afnQWL5Z+R5MdosVN1Jg8nnlyLadUpaEL70mKRyvMo42QzHdCUvRMmzjXbAc21k1WZnkIFmAr8tS95oGa3oOo4ZvdfcqT0FOikef/KcL8tqNqeQgXYFtgW3ILsQxEDXTm33e3s8WCadLTYfQP9ZB4/iFxRnT1wDCdeT8dmHVgDKOc094PINS0AUatkHj+IXKEzB1DwlgpNVf7y8SQt513Bg7F4Pj+Ow3Az9r70QsqBcDr45CzPAq9AXKNwrGCZFbdYGsEvKtprzPcVJ1cAAAAASUVORK5CYII=">
+					  <strong>Events, press and news services</strong>
+					</a>
+				  </div>
+				</div>
+			  </header>
+			  <main id="list">
+				<ul>
+				  <li><a href="">Buy, sell and rent commercial real estate</a></li>
+				  <li><a href="">Pay investments to the seller (for investors)</a></li>
+				  <li><a href="">Automatic investor search according to your preferences and desires</a></li>
+				  <li><a href="">Get documents on the completed transaction</a></li>
+				  <li><a href="">Pay the transaction to the investor</a></li>
+				  <li><a href="">Online appeal to your investor or expert</a></li>
+				  <li><a href="">Check the transaction confirmation (for experts)</a></li>
+				  <li><a href="">Linking banking services to current transactions (for investors)</a></li>
+				  <li><a href="">Online appeal to the administration of the portal</a></li>
+				</ul>
+			  </main>
+			</div>
+			<h2 id="title">New services</h2>
+			<div class="news-feed">
+                <footer>
+                    <div id="down-feed">
+                        <div class="down-feed-cont">
+                            <div id="cont-content">
+                                <ul>
+                                    <li>
+                                        <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                                        <span>
+                                            Pompeo suggested the possible move during an interview with Fox News...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">Black Friday as we know it is finally dead</a>
+                                        <span>
+                                            Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                                        <span>
+                                            Pompeo suggested the possible move during an interview with Fox News...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">Black Friday as we know it is finally dead</a>
+                                        <span>
+                                            Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day...
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                   </div>
+                </footer>
+            </div>
+			<h2 id="title">Popular services</h2>
+			<div class="news-feed">
+                <footer>
+                    <div id="down-feed">
+                        <div class="down-feed-cont">
+                            <div id="cont-content">
+                                <ul>
+                                    <li>
+                                        <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                                        <span>
+                                            Pompeo suggested the possible move during an interview with Fox News...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">Black Friday as we know it is finally dead</a>
+                                        <span>
+                                            Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">The United States is 'looking at' banning TikTok and other Chinese social media</a>
+                                        <span>
+                                            Pompeo suggested the possible move during an interview with Fox News...
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="">Black Friday as we know it is finally dead</a>
+                                        <span>
+                                            Thousands of shoppers gather sometimes as early as 5 pm Thanksgiving Day...
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <header>
+            <div class="logo">
+                <img src="images/icons/investportal-light.png" alt="InvestPortal" />
+            </div>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            <main>
+                <a href="" target="_blank"><img src="images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="images/icons/socials/4-foot.png" alt="SN" /></a>
+            </main>
+        </header>
+        <main>
+            <div id="category_menu">
+                <a href="#" class="catname">Low</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Search for Investors</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Analytics</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Evaluation and Audit</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+        </main>
+    </footer>
+    <div id="chat-lightbox" class="lightbox-closed">
+        <header>
+          <img src="https://img.icons8.com/windows/32/627182/macos-close.png" alt="Close"/>
+        </header>
+        <main class="chat">
+          <div id="header">
+            <div class="consultant-cont">
+              <img src="https://img.icons8.com/bubbles/50/000000/girl-with-compass.png" id="avatar" align="left"/>
+              <span id="firstname">Alise Kaminskaya</span>
+              <span id="staff">Caring consultant</span>
+            </div>
+          </div>
+          <div id="content">
+            <section id="message" data-eventer="sender">
+              <span>12:00</span>
+              <main>
+                Hello! On your portal, is it possible to issue a profitable loan for small businesses in electronic transactions with objects?
+              </main>
+            </section>
+            <section id="message" data-eventer="inbox">
+              <span>12:02</span>
+              <main>
+                Of course! In our database there are dozens of partner banks that are ready to help on our portal not  with obtaining a loan for SMEs, but with the introduction of a whole range of corporate banking services, depending on your business activity, for which you are going to buy an object;-)
+              </main>
+            </section>
+          </div>
+          <div id="footer">
+            <textarea id="message" placeholder="Input this message and but on Enter"></textarea>
+          </div>
+        </main>
+      </div>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
