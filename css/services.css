@@ -88,3 +88,82 @@ main#list > ul li a{
   text-indent: 4%;
   text-decoration: none;
 }
+
+@media all and (max-width: 414px){
+	#services-public { height: calc(800px * 3); }
+	#services-list {
+		width: 100%;
+		flex-flow: wrap;
+	}
+	header#search > .last-example { font-size: 70%; }
+	main#list > ul {
+		width: 90%;
+		font-size: 83%;
+		margin-left: -16%;
+		margin-top: -42%;
+	}
+}
+@media all and (min-width: 414px) and (max-width: 768px){
+	#services-public {padding-bottom: 191%;}
+	#services-list {
+		width: 108%;
+		flex-flow: wrap;
+	}
+	header#search > .last-example { font-size: 70%; }
+	main#list > ul {
+		width: 90%;
+		font-size: 83%;
+		margin-left: -12%;
+		margin-top: -6%;
+	}
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+	#services-public {padding-bottom: 226%;}
+	#services-list {
+		width: 100%;
+		flex-flow: wrap;
+	}
+	header#search > .last-example { font-size: 70%; }
+	main#list > ul {
+		width: 90%;
+		font-size: 83%;
+		margin-left: -12%;
+		margin-top: -15%;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+	#services-public {padding-bottom: 115%;}
+	#services-list {
+		width: 107%;
+		flex-flow: wrap;
+	}
+	header#search > .last-example { font-size: 70%; }
+	main#list > ul {
+		width: 90%;
+		font-size: 83%;
+		margin-left: -12%;
+		margin-top: 2%;
+	}
+}
+@media all and (min-width: 800px) and (max-width: 1024px){
+	#services-public {padding-bottom: 226%;}
+	#services-list {
+		width: 100%;
+		flex-flow: wrap;
+	}
+	header#search > .last-example { font-size: 70%; }
+	main#list > ul {
+		width: 90%;
+		font-size: 83%;
+		margin-left: -12%;
+		margin-top: -15%;
+	}
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){	
+	#services-public {
+		padding-bottom: 27%;
+	}
+	#services-list {
+		width: 89%;
+	}
+}

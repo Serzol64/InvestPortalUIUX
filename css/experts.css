@@ -99,8 +99,9 @@
 
 
 .result > li *[data-block='footer']{
-  grid-area: 3 / 2 / 7 / 9;
+  grid-area: 6 / 2 / 7 / 9;
   margin-left: 4%;
+  margin-top: -36%;
 }
 
 *[data-block='footer']{
@@ -117,4 +118,290 @@
 .result > li *[data-block='alert']{
   grid-area: 7 / 2 / 9 / 9;
   margin-left: 7%;
+}
+
+@media all and (max-width: 414px){
+	#experts { height: calc(800px * 9); }
+	#consultQ {
+		width: 90%;
+		font-size: 110%;
+	}
+	#experts-search > header {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	#experts-search > main {
+		grid-area: 2 / 1 / 3 / 6;
+	}
+	.searchComponent {
+		background-color: white;
+		width: 90%;
+		display: block;
+		margin-top: -27%;
+		margin-left: 4%;
+	}
+	#experts-search > footer {
+		grid-area: 3 / 1 / 4 / 6;
+		width: 91%;
+	}
+	#experts-search > footer i {
+		margin-top: 50%;
+		margin-left: 7%;
+	}
+	.result > li *[data-block='header'] {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	.result > li *[data-block='content'] {
+		grid-area: 2 / 1 / 3 / 6;
+		margin-left: 10%;
+		width: 180%;
+		margin-top: -23%;
+	}
+	.result > li *[data-block='footer'] {
+		grid-area: 3 / 1 / 4 / 6;
+		font-size: 90%;
+		width: 180%;
+		margin-left: -17%;
+		margin-top: -16%;
+	}
+	.result > li *[data-block='alert'] {
+		grid-area: 4 / 1 / 5 / 5;
+		width: 254%;
+		margin-top: 28%;
+	}
+}
+@media all and (min-width: 414px) and (max-width: 768px){
+	#experts {height: calc(800px * 11);}
+	#consultQ {
+		width: 90%;
+		font-size: 110%;
+	}
+	#experts-search > header {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	#experts-search > main {
+		grid-area: 2 / 1 / 3 / 6;
+	}
+	.searchComponent {
+		background-color: white;
+		width: 90%;
+		display: block;
+		margin-top: -27%;
+		margin-left: 4%;
+	}
+	#experts-search > footer {
+		grid-area: 3 / 1 / 4 / 6;
+		width: 91%;
+	}
+	#experts-search > footer i {
+		margin-top: 50%;
+		margin-left: 7%;
+	}
+	.result > li *[data-block='header'] {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	.result > li *[data-block='content'] {
+		grid-area: 2 / 1 / 3 / 6;
+		margin-left: 10%;
+		width: 180%;
+		margin-top: -5%;
+	}
+	.result > li *[data-block='footer'] {
+		grid-area: 3 / 1 / 4 / 6;
+		font-size: 90%;
+		width: 180%;
+		margin-left: -9%;
+		margin-top: 3%;
+	}
+	.result > li *[data-block='alert'] {
+		grid-area: 4 / 1 / 5 / 5;
+		width: 236%;
+		margin-top: 28%;
+		margin-left: 16%;
+	}
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+    #experts {height: calc(800px * 13);}
+	#consultQ {
+		width: 90%;
+		font-size: 110%;
+	}
+	#experts-search > header {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	#experts-search > main {
+		grid-area: 2 / 1 / 3 / 6;
+	}
+	.searchComponent {
+		background-color: white;
+		width: 90%;
+		display: block;
+		margin-top: -27%;
+		margin-left: 4%;
+	}
+	#experts-search > footer {
+		grid-area: 3 / 1 / 4 / 6;
+		width: 91%;
+	}
+	#experts-search > footer i {
+		margin-top: 50%;
+		margin-left: 7%;
+	}
+	.result > li *[data-block='header'] {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	.result > li *[data-block='content'] {
+		grid-area: 1 / 2 / 3 / 9;
+		margin-left: 50%;
+		width: 180%;
+		margin-top: 14%;
+	}
+	.result > li *[data-block='footer'] {
+		grid-area: 3 / 2 / 7 / 9;
+		font-size: 90%;
+		width: 180%;
+		margin-left: -18%;
+		margin-top: -49%;
+	}
+	.result > li *[data-block='alert'] {
+		width: 254%;
+		margin-top: -80%;
+		margin-left: 4%;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+    #experts { height: calc(800px * 9); }
+	#consultQ {
+		width: 90%;
+		font-size: 110%;
+	}
+	#experts-search > header {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	#experts-search > main {
+		grid-area: 2 / 1 / 3 / 6;
+	}
+	.searchComponent {
+		background-color: white;
+		width: 90%;
+		display: block;
+		margin-top: -27%;
+		margin-left: 4%;
+	}
+	#experts-search > footer {
+		grid-area: 3 / 1 / 4 / 6;
+		width: 91%;
+	}
+	#experts-search > footer i {
+		margin-top: 50%;
+		margin-left: 7%;
+	}
+	.result > li *[data-block='header'] {
+	}
+	.result > li *[data-block='content'] {
+		margin-left: 10%;
+		width: 119%;
+		margin-top: -3%;
+	}
+	.result > li *[data-block='footer'] {
+		font-size: 90%;
+		width: 180%;
+		margin-left: -17%;
+		margin-top: -44%;
+	}
+	.result > li *[data-block='alert'] {
+		width: 254%;
+		margin-top: -2%;
+		margin-left: -10%;
+	}
+}
+@media all and (min-width: 800px) and (max-width: 1024px){
+    #experts {height: calc(800px * 6);}
+	#consultQ {
+		width: 90%;
+		font-size: 110%;
+	}
+	#experts-search > header {
+		grid-area: 1 / 1 / 2 / 6;
+	}
+	#experts-search > main {
+		grid-area: 2 / 1 / 3 / 6;
+	}
+	.searchComponent {
+		background-color: white;
+		width: 90%;
+		display: block;
+		margin-top: -27%;
+		margin-left: 4%;
+	}
+	#experts-search > footer {
+		grid-area: 3 / 1 / 4 / 6;
+		width: 91%;
+	}
+	#experts-search > footer i {
+		margin-top: 50%;
+		margin-left: 7%;
+	}
+	.result > li *[data-block='header'] {
+	}
+	.result > li *[data-block='content'] {
+		margin-left: 12%;
+		width: 180%;
+		margin-top: -2%;
+	}
+	.result > li *[data-block='footer'] {
+		grid-area: 3 / 1 / 4 / 6;
+		font-size: 130%;
+		width: 180%;
+		margin-left: -2%;
+		margin-top: -16%;
+	}
+	.result > li *[data-block='alert'] {
+		grid-area: 4 / 1 / 5 / 5;
+		width: 254%;
+		margin-top: 28%;
+	}
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #experts {height: calc(800px * 3);}
+	.result > li *[data-block='header'] {
+		margin-top: 47%;
+		margin-left: 35%;
+	}
+	.result > li *[data-block='content'] { margin-left: 16%; }
+	.result > li *[data-block='footer'] {
+		margin-left: 4%;
+		margin-top: -59%;
+		font-size: 94%;
+	}
+	.result > li *[data-block='alert'] {
+		margin-left: 16%;
+		margin-top: -2%;
+	}
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+	#experts {height: calc(800px * 2);}
+	.result > li *[data-block='header'] {
+		margin-top: 47%;
+		margin-left: 35%;
+	}
+	.result > li *[data-block='content'] { margin-left: 16%; }
+	.result > li *[data-block='footer'] {
+		margin-left: 8%;
+		margin-top: -46%;
+		font-size: 94%;
+	}
+	.result > li *[data-block='alert'] {
+		margin-left: 16%;
+		margin-top: -2%;
+	}
+}
+@media all and (min-width: 1366px) and (max-width: 1440px){
+	#experts {height: calc(800px * 2);}
+	.result > li *[data-block='footer'] {
+		margin-left: 4%;
+		margin-top: -41%;
+	}
+}
+@media all and (min-width: 1440px) and (max-width: 1536px){
+	#experts {height: calc(800px * 2);}
 }

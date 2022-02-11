@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>InvestPortal</title>
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../css/news/view.css" />
+    <link rel="stylesheet" href="../css/analytics/view.css" />
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+	
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+    <style>
+             
+        
+        @media all and (max-width: 414px){}
+        @media all and (max-width: 600px){}
+        @media all and (max-width: 768px){}
+        @media all and (max-width: 800px){}
+        @media all and (max-width: 960px){}
+        @media all and (max-width: 1024px){}
+        @media all and (max-width: 1280px){}
+        @media all and (max-width: 1366px){}
+        @media all and (max-width: 1440px){}
+        @media all and (max-width: 1536px){}
+        @media all and (max-width: 1600px){}
+        @media all and (max-width: 1920px){}
+        @media all and (min-width: 1920px){}
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="header_top">
+            <div class="ht_header">
+                <img src="../images/icons/investportal.png" alt="InvestPortal" />
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            </div>
+        </div>
+        <div id="header_bottom">
+            <div class="hb_bottom">
+                <header>
+                    <div class="welcome-link">
+                        <a href="">How the start</a>
+                    </div>
+                    <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
+                        <main>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </main>
+                        <footer>
+                            <div class="user-services">
+                                <div>
+                                    <a href="">Join/Login</a>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
+                                </div>
+                            </div>
+                            <div class="menu-show">
+                                <a href=""><i class="fas fa-bars" style="color: #0079bf;"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </header>
+                <footer>
+                    <nav>
+                        <a href="" id="active">Investment objects</a>
+                        <a href="">Investors</a>
+                        <a href="">Services</a>
+                        <a href="">Experts</a>
+                        <a href="">Analytics</a>
+                        <a href="">About</a>
+                        <a href="">News</a>
+                        <a href="">Events</a>
+                        <a href="" id="menu-image"><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></a>
+                        <a href="" id="menu-image"><i class="fas fa-search" style="color: #0079bf;"></i></a>
+                    </nav>
+                    
+                </footer>
+            </div>
+        </div>
+        <div id="header_bottom_adaptive">
+            <header>
+                <ul class="adaptive-buttons">
+                    <li><i class="fas fa-bars" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-search" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-user-check" style="color: #0079bf;"></i></li>
+                    <li><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></li>
+                </ul>
+            </header>
+            <footer>
+                <section id="adaptive-window" class="menu" style="display: none;">
+                    <header>
+                        <div class="welcome-link">
+                            <a href="">How the start</a>
+                        </div>
+                        <div class="exchange-selector">
+                            <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                              <option value="usd">USD</option>
+                              <option value="eur">EUR</option>
+                           </select>
+                        </div>
+                    </header>
+                    <main>
+                        <nav>
+                            <div class="active"><a href="">Investment objects</a></div>
+                            <div><a href="">Investors</a></div>
+                            <div><a href="">Services</a></div>
+                            <div><a href="">Experts</a></div>
+                            <div><a href="">Analytics</a></div>
+                            <div><a href="">About</a></div>
+                            <div><a href="">News</a></div>
+                            <div><a href="">Events</a></div>    
+                        </nav>
+                    </main>
+                    <footer>
+                        <center>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </center>
+                    </footer>
+                </section>
+            </footer>
+        </div>
+    </header>
+    <main class="main" style="background-color:   #eff3f4;">
+        <section class="section" id="link-switcher">
+            <a href="index.html">Main</a> <span id="delimeter"> / </span> <a href="../analytics.html">Analytics</a> <span id="delimeter"> / </span> <a href="view.html" class="active">April abstracts. Commercial real estate</a>
+        </section>
+        <section class="section" id="news">
+            <div class="news-viewer">
+                <div id="left-content">
+                    <header>
+                        <h2>Banking sector forecast for 2022: a respite from records</h2>
+                        <section class="public-date">
+                            <img src="https://img.icons8.com/fluent-systems-regular/24/0079bf/clock--v1.png" alt="Дата публикации" id="clock" />
+                            <i>26/01/2022</i>
+                        </section>
+                    </header>
+                    <main>
+                        <section class="title-image">
+                            <img src="https://raexpert.ru/uploaded_struct_images/1000044625.jpg" alt="Title Image">
+                        </section>
+                        <section class="news-content">
+                            <p class="bookmark">Content</p>
+                            <p>
+								<ul id="content-list">
+									<li><a href="#resume">Resume</a></li>
+									<li><a href="#bgForecast">Background of the Expert RA forecast</a></li>
+									<li><a href="#landing2022">Lending dynamics in 2022: slowing down after records</a></li>
+									<li><a href="#drbeac">The delinquency rate is being eroded by aggressive credit growth and restructurings</a></li>
+									<li><a href="#ear2022">2022 Earnings: CoR vs. Interest Income</a></li>
+									<li><a href="#rpn">Record profits are not for everyone</a></li>
+									<li><a href="#app">Application</a></li>
+								</ul>
+                            </p>
+                            <hr />
+                            <p class="bookmark" name="resume">Resume</p>
+                            
+                            <p>
+								All lending segments showed strong growth rates in 2021. The main growth factors are low interest rates, an increase in the average loan receipt due to higher prices, and easing requirements for borrowers. In all segments of retail loans, the share of loans issued to borrowers with a high debt burden increased. In addition, due to high inflation and low income growth, there was a significant increase in the average term of FL loans.
+                            </p>
+                            <p>
+								The banking sector made a record profit, but high profitability is mainly demonstrated by the largest banks. The average ROE of banks in the top 30 by assets is three times higher than that of other banks (16% vs. 5 %). For two consecutive years, the average ROE of banks outside the top 30 by assets has been below the inflation rate. The inability to significantly improve the efficiency of operations against the background of a sharp increase in inflation increases the risks of small banks.
+                            </p>
+                            <p>
+								The delinquency rate is being eroded by aggressive credit growth and restructurings. The share of delinquencies in all lending segments decreased by the end of 2021. However, the growth rate of restructured loans to large businesses and retail loans (excluding mortgages) remains noticeable. According to our estimates, the share of restructured loans to large businesses in 2021 will be about 18% against 16% a year earlier; the share of restructured retail loans (excluding mortgages) will be 5.4%, adding 1.1 percentage points in 2021.
+                            </p>
+                            <p>
+								In 2022, as a result of higher interest rates, credit growth will slow down. The growth of lending volumes will be supported by state programs of soft loans and a further increase in the average credit check. Mortgage and SME loans, which are most actively supported by state programs, will remain the drivers of the market.
+                            </p>
+                            <p>
+								Net profit in 2022 will not exceed the result of the previous year due to the cooling of the consumer lending market, a slowdown in mortgage loans, an increase in the cost of funding, as well as an increase in the cost of risk. In 2022, the cost of risk will return to the pre-pandemic values of 2019 and will amount to about 2 % for retail loans and 1 % for legal entities.
+                            </p>
+                            
+                            <p class="bookmark" name="bgForecast">Background of the Expert RA forecast</p>
+                            
+                            <p>
+								The basic forecast of the Expert RA agency assumes the absence of long-term strict quarantine and other significant restrictive measures in connection with the COVID-19 pandemic, as well as the maintenance of sanctions pressure at the current level. In 2022, we expect the economic growth rate to slow down to 2.5-2.8% against 4.3% in 2021. Due to the continuation of a tight monetary policy, the inflation rate will fall to 5-6 % by the end of 2022. The peak of the DCT tightening cycle will occur in the first and second quarters of 2022 (we expect a 0.5–1 point increase in the key rate). Starting from the 2nd half of 2022, if inflation shows a steady decline to below 6%, the cycle of gradual lowering of the key rate will begin, and at the end of the year it will be about 7.75–8 %. As a result, the average annual key rate will be about 8-9%, which is more than 2 percentage points higher than last year's level. We estimate the probability of implementing the basic forecast at 60-70 %.
+                            </p>
+                            <p>
+								The negative forecast of the Expert RA agency suggests an increase in sanctions pressure and / or the introduction of significant restrictive measures against the background of a worsening epidemiological situation. The negative scenario assumes that inflation will remain at more than 6 % by the end of 2022, which will lead to a continuation of the cycle of raising the key rate throughout the year, as a result of which the average annual key rate will exceed 9 %. Under this scenario, a significant decline in the average annual oil price (up to $ 65 per barrel) and a near-zero GDP growth rate are expected. We estimate the probability of implementing a negative forecast at 30-40 %. The key financial indicators of the banking sector under the negative scenario are shown in tables 2-3.
+                            </p>
+                            
+                            <p class="bookmark" name="landing2022">Lending dynamics in 2022: slowing down after records</p>
+                            
+                            <p>
+								Under the baseline scenario, credit growth will be limited by the increase in the cost of loans and the still weak dynamics of real disposable incomes of the population (+2-3 %) and GDP (+2.8%). As a result of higher interest rates, the growth rate of all lending segments will slow down in 2022. At the same time, against the background of continuing high inflation, an increase in the average loan receipt will continue to make a significant contribution to the growth of the loan portfolio. Over the medium term, credit growth in key segments will continue to be supported by government support programs. Government support is becoming increasingly important for ensuring economic growth, especially in conditions of high inflation. Without government subsidies, interest rates on soft loans do not cover the level of risk and do not provide sufficient marginality for banks. At the same time, many borrowers will not be able to service loans with the level of interest rates that banks are willing to offer them on market terms without government subsidies.
+                            </p>
+                            <p>
+								With weak economic growth, stagnant household incomes, and a shortage of quality borrowers, competition in the banking market continues to tighten. Moreover, over the past few years, competition has noticeably intensified among the largest players who have switched to a strategy of aggressive growth, especially in retail lending as the highest-margin segment. In addition, it is large banks that are the most active participants in soft loan programs, which act as drivers of credit growth. Most major banks seek to significantly increase the capacity and loyalty of their customer base by implementing their own ecosystems or by partnering with other companies in the financial and non-financial sectors. As unsecured consumer lending cools and mortgage lending slows, competition in the banking sector will continue to grow. Therefore, despite the continued high profitability of the sector as a whole, we expect that the gap in the profitability level of the largest banks will increase over the next few years.
+                            </p>
+                            <p>
+								<p id="subBookmark">Mortgage</p>
+								<hr />
+								<p id="subBookmark_content">
+									In 2021, against the backdrop of low interest rates and economic recovery, all segments of lending grew dynamically. An increase in inflation and an increase in the average credit check also contributed to the acceleration of credit growth. In the 12 months ended November 2021, the average size of a mortgage loan increased by 37 %, to RUB 3.7 million, and an unsecured consumer loan-by 9.5 %, to RUB 254 thousand.
+								</p>
+								<p id="subBookmark_content">
+									In addition, banks have increased their risk appetite and eased requirements on borrowers, which were revised more conservatively at the start of the pandemic. The share of mortgage loans issued to borrowers with a high debt burden (PD more than 60%), which fell significantly at the height of the first wave of the pandemic (II –III quarters of 2020), has already returned to the level of the first quarter of 2020 and amounted to 43% in the third quarter of 2021.
+								</p>
+								<p id="subBookmark_content">
+									In addition, due to a noticeable increase in real estate prices and a low rate of income growth, there is a significant increase in the average mortgage loan term. According to the results of November 2021, the average term of a mortgage loan was 21 years, adding 2.5 years to November 2020. On the one hand, increasing the duration of the loan portfolio is beneficial for banks, since long-term loans provide a more stable base for generating interest income, in contrast to short-term loans, when the bank is constantly forced to look for new directions for placing funds. However, given the volatility of interest rates in the economy, long-term mortgage loans, whose interest rate is usually fixed, can put pressure on banks ' margins. At the same time, an increase in duration may be an indicator of a deterioration in the quality of the loan portfolio in the future. Extending loan terms is a necessary measure when borrowers ' incomes are declining, and therefore they need more time to repay the loan.
+								</p>
+								<p id="subBookmark_content">
+									In 2021, mortgage lending grew strongly (+27, or +34 % adjusted for securitization1 against 24 % at the end of 2020). Record growth rates were driven by low interest rates, as well as disbursements under concessional lending programs. 2 which accounted for half of the portfolio's growth. Mortgage lending will continue to be a driver of credit growth in 2022, but its growth rate will slow down both against the background of higher interest rates, and due to the exhaustion of effective demand and low growth rates of household incomes. As the cycle of raising the key rate continues, mortgage rates, according to the agency's estimates, will exceed the psychological level of 10 %. On the one hand, the increase in real estate prices will have a multidirectional impact – some potential borrowers may postpone the decision to buy real estate, on the other hand, the average mortgage check will increase, which will increase the volume of disbursements and the portfolio. If the program of preferential mortgages at 7 % is curtailed from the 2nd half of 2022, we expect that the issuance of preferential mortgages will be reduced by 40 % and will amount to about 1 trillion rubles by the end of 2022. As a result, the portfolio of mortgage loans will grow in 2022 in the range of 15-17% against 27% in 2021. However, state programs will continue to provide significant support to mortgage lending (primarily "Preferential mortgage at 7%" in the first half of 2022 and "Family Mortgage"), without taking them into account, the portfolio growth will be 7-11 %. In addition to government programs, the growth of mortgage lending will be stimulated by joint programs of banks and developers to subsidize mortgage rates and the development of mortgages in the secondary housing market.
+								</p>
+								<hr color="black" />
+                            </p>
+                            <p>
+								<p id="subBookmark">Unsecured consumer loans</p>
+								<hr />
+								<p id="subBookmark_content">
+									Unsecured consumer loans showed impressive growth rates in 2021, comparable to 2018-2019 (+20% against 9 % in 2020). In addition to the low level of interest rates, high growth rates were provided by easing requirements for borrowers. The share of unsecured consumer loans issued to borrowers with a high debt burden (PD more than 70 %) showed stable growth in 2021 after a short-term decline in the second and fourth quarters of 2020, when the country experienced an aggravation of the epidemiological situation. At the same time, by the end of 2021, the share of consumer loans issued to borrowers with a high debt burden would have significantly exceeded the pre-pandemic level of 40 %, if there had not been a decrease in the amount of monthly payments due to an increase in loan terms. Thus, the share of unsecured consumer loans issued with a maturity of more than five years has increased by 8 percentage points since the beginning of the year and amounted to 21% in the third quarter of 2021.
+								</p>
+								<p id="subBookmark_content">
+									Against the background of these trends, the regulator tightened the risk weights on high-margin loans (with UCS > 25 %) and loans to borrowers with a high debt load (PD >> 50 %) from October 1, 2021, which will fully affect the pace of lending in 2022. In addition to raising interest rates, the regulator's new measures designed to reduce the level of household debt will put pressure on the growth rate of consumer lending. We expect that the regulator will introduce new disincentive measures for consumer loans in the 2nd half of 2022. At the same time, it is most likely to introduce macroprudential limits, which, unlike direct quantitative restrictions, do not prohibit the issuance of loans to the most highly credited borrowers, but increase the pressure of such loans on capital. The paper considers introducing limits not only on the share of loans issued to borrowers with a high debt burden (PD more than 80%), but also on the share of loans issued with a maturity of more than five years, or limiting the maximum term of unsecured consumer loans to five years. In addition, the planned tightening of the calculation of the full cost of credit (UCC) will have a restraining effect on consumer lending. As a result, by the end of 2022, the growth rate of the unsecured consumer loan portfolio will show a significant slowdown to 12-15 %.
+								</p>
+								<hr color="black" />
+                            </p>
+                            <p>
+								<p id="subBookmark">Car loans</p>
+								<hr />
+								<p id="subBookmark_content">
+									The car loan portfolio showed a record growth of 22 % in 2021, which is significantly higher than in 2018 and 2019 (+16 and +14%, respectively). In addition to low rates and state programs of concessional lending ("Family car" and "First car") high growth rates of car loans provided a 41% increase in the average loan receipt, which in November 2021 reached 1.25 million rubles, and easing requirements for borrowers. In the face of a sharp increase in car prices, which was not supported by a corresponding increase in household incomes, banks were forced to significantly increase the loan term: the average term of a car loan in September 2021 exceeded five years, while a year earlier it was slightly more than four years. In addition, the acceleration of credit penetration into the used car sales market provided support for car loans. According to Autostat, from 2017 to 2020, the share of credit sales in the segment of used passenger cars increased from 2 to 4 %, and in January – September 2021 it reached 8 %. For comparison, the share of loans in the sale of new cars is significantly higher (about 46 % in January-September 2021).
+								</p>
+								<p id="subBookmark_content">
+									The key driver of car loans in the medium term will be the significant potential of the used car market, which by the end of 2021 is highly likely to exceed sales of new passenger cars by four times. In 2022, the growth of car loans will slow down both against the background of higher interest rates, and due to stagnation or even a decrease in sales of new passenger cars. Also, the expected tightening of the calculation of the full cost of credit (UIC) may have a restraining effect on the car loan market. The car loan market will be held back from a significant decline by the extension of state programs of concessional lending, a further increase in the average loan receipt due to higher prices for cars and the potential for growth in credit sales in the used car segment. According to our estimates, by the end of 2022, the portfolio of car loans will add about 13-16 %.
+								</p>
+								<hr color="black" />
+                            </p>
+                            <p>
+								<p id="subBookmark">Guarantees</p>
+								<hr />
+								<p id="subBookmark_content">
+									In 2022, according to our estimates, the growth rate of the guarantee portfolio will increase slightly compared to 2021 (+9% vs. 6-8 %). The guarantee market will be supported by an increase in the volume of public procurement against the background of the planned increase in costs for the implementation of national projects (by 16 %, to 2.74 trillion rubles), a significant part of which falls on the development of road and urban infrastructure, as well as healthcare. The guarantee business remains one of the most attractive for banks due to the low level of default. Even during the peak repayment period, which was observed in 2020, the default rate of guarantees remained significantly lower than for loans. Due to the improvement of the economic situation in 2021, the level of payments under guarantees significantly decreased (from 0.5 to 0.3%), but remained quite high compared to 2019, when the default rate was at a record low of 0.1%. We do not expect a significant reduction in the level of payments in 2022 due to the deterioration of the business environment for SMEs amid rising prices and higher cost of credit resources.
+								</p>
+								<p id="subBookmark_content">
+									However, it is worth noting that the actual level of default of guarantees is lower, since principals, as a rule, seek to compensate banks for losses in order to maintain access to obtaining guarantees for working with government orders in the future. Also, the product of insurance of risks of payments under guarantees (mainly issued to representatives of SMEs) in leading insurance companies is gaining popularity among banks, which significantly reduces the actual level of losses of banks. In addition, the advantage of the guarantee business is the relative stability of its dynamics due to its lower sensitivity to rising interest rates in contrast to the dynamics of lending, since the guarantee business does not depend on the growth rate of the economy and borrowers ' demand for credit resources, but on the volume of the state order market.
+								</p>
+                            </p>
+                            
+                            <p class="bookmark" name="drbeac">The delinquency rate is being eroded by aggressive credit growth and restructurings</p>
+                            
+                            
+                            <p>
+								We expect that by the end of 2021, the share of overdue debt in both the corporate and retail loan portfolios will decrease mainly due to faster growth in lending volumes, while the share of loans to large businesses will decrease by 1.3 percentage points, to 6 %, including as a result of the assignment of a number of large problem loans. In 2022, we expect a gradual increase in delinquencies due to a slowdown in lending, maturation of loans issued in 2020-2021, and impairment of some restructured loans (mainly corporate).
+                            </p>
+                            <p>
+								Thus, the increase in the volume of restructured loans to large businesses remains noticeable, since even against the background of high growth rates of the loan portfolio, the share of restructured loans is increasing and, according to our estimates, will amount to about 18% by the end of 2021 against 16% a year earlier (in absolute terms, over 6.1 trillion rubles, of which about 2.2 trillion On the contrary, the growth rate of prolongations for SME loans has noticeably slowed down compared to 2021, and their share will decrease by about 1 percentage point at the end of the year, to 14 %. According to our estimates, the potential volume of additional reserves for restructured loans to legal entities is about 1 trillion rubles. However, this increase in reserves will be extended for two to three years. The amount of overdue loans to large businesses will grow gradually over several years, as banks will continue to restructure some of these loans, and some large loans will be assigned to third parties as part of clearing the balance sheet of distressed assets.
+                            </p>
+                            <p>
+								The volume of restructured loans continues to grow at a noticeable pace for retail loans (excluding mortgages): in the first six months of 2021, their volume increased by 30% and amounted to 600 billion rubles. We expect that by the end of the year, the share of restructured retail loans (excluding mortgages)will reach 5.4 %, adding 1.1 percentage points in 2021. In addition to the increase in the share of restructured loans, indicators of deterioration in the credit quality of retail loans are a consistently high share of loans to borrowers with a high debt burden and a gradual increase in loan terms, which compensates for the low growth rate of household incomes.
+                            </p>
+                            <p>
+								In 2020-2021, the cost of risk showed significant volatility as a result of the preventive creation of reserves at the beginning of the pandemic, followed by the dissolution of part of the over-formed reserves in 2021. We expect that in 2022 the cost of risk will return to pre-pandemic values and will amount to about 2 % for retail loans and 1 % for legal entities. The abnormally low values of the cost of risk in 2021 were largely due to the fact that potentially non-performing loans were over-reserved in 2020, and in the last 12 months there was a recovery in reserves. Expert RA expects that the maturation of fast-growing loan portfolios formed in 2020-2021 will require an increase in reserve contributions from 2022 onwards.
+                            </p>
+                            
+                            <p class="bookmark" name="ear2022">2022 Earnings: CoR vs. Interest Income</p>
+                            
+                            <p>
+								According to our estimates, the net interest margin will decrease from 4.2% in 2021 to 4.0% in 2022 due to faster growth in the cost of funding, primarily for FL deposits, since the main impact of the key rate increase that occurred at the end of 2021 will be fully reflected in early 2022. In addition, we expect the key rate hike cycle to continue in the first quarter of 2022. A slowdown in the growth rate of high-margin unsecured consumer loans will also put pressure on the margin level. The margin will be kept from falling more significantly by a rather high share of legal entities 'loans at floating rates (about 43 % for loans to large businesses and 24 % for SME loans) and a high turnover of legal entities' loans (more than half of the loans are short-term). However, the increase in funding costs cannot be fully offset by an increase in interest rates on loans already issued, as such a scenario would lead to an increase in loan defaults, taking into account the average high debt burden of borrowers in both the retail and corporate segments, as well as the unfavorable economic situation. In addition, retail loans are mostly long-term and are issued at fixed interest rates.
+                            </p>
+                            <p>
+								The sector's record profit in 2021 is primarily due to a significant reduction in reserve contributions. On retail loans, reserves were mainly created for new loans, and on legal entities ' loans, there was a significant recovery in the RVC, including due to the assignment of a number of large problem loans, as well as the dissolution of some of the reserves created in 2020 for restructured loans. In addition, earnings were supported by a significant increase in net interest income (+10% in 2021, according to our estimates) on the back of strong lending growth, as well as a significant increase in net commission income (+16% in 2021) due to increased income from brokerage services (+46%), commissions from issuing guarantees (+25%), as well as RKO income and money transfer (+25 and +23%, respectively). We expect net fee and commission income growth to slow to 11% in 2022. The slowdown is due to both a decrease in commissions from the sale of insurance products on retail loans and a contraction in income from brokerage services, as brokerage accounts will become less attractive to individuals in the face of rising deposit rates. According to our estimates, net interest income growth will also slow down to 7% due to a decrease in lending rates and an increase in the cost of funds raised. As a result of the faster growth of net commission income, their share in net operating income will continue to increase and will amount to 28 % by the end of 2022.
+                            </p>
+                            <p>
+								Net profit in 2022 will not exceed last year's result, but will remain at a significant level. Earnings will be weighed down by a cooling consumer credit market, a slowdown in mortgage lending, a rise in the cost of funding, and an increase in the cost of risk on both retail and corporate loans. According to our estimates, in 2022, net contributions to reserves will double compared to 2021 and amount to about 1 trillion rubles. The increase in the reserve ratio will occur due to the maturation of retail loan disbursements in 2020-2021, as well as the deterioration of the credit quality of some restructured loans (primarily legal entity loans). In addition, the pressure on profit will be exerted by individual defaults of large corporate borrowers against the background of macroeconomic instability, the scale of which will be limited and absorbed by the banks ' capital adequacy reserve, but will still have a material impact on the financial result in combination with other factors.
+                            </p>
+                            <p>
+								However, the expected increase in reserves will be offset by an increase in net interest and commission income. We expect that the net profit for 2022 will be slightly less than the result of 2021 and will be in the range of 2.1–2.3 trillion rubles, and the return on equity will decrease to 16-18% against 21-22 % for 2021.
+                            </p>
+                            
+                            <p class="bookmark" name="rpn">Record profits are not for everyone</p>
+                            
+                            <p>
+								However, it is not the entire banking sector that shows record profits, but individual, as a rule, major players. Thus, in the 12 months ended 01.10.2021, the average return on capital of banks in the top 30 by assets was three times higher than that of other banks (16% vs. 5 %), which is due to both lower operating costs relative to the scale of operations and a high level of digitalization of services, as well as more aggressive business growth of large banks. Over the past three years, the average profitability of banks outside the top 30 by assets has remained virtually unchanged and has been below inflation for two consecutive years. Despite the reduction in the number of banks by 8 % in 2021, the share of unprofitable banks, which are mainly represented by small credit institutions, remained at the level of 2020 and is about 20 %. The inability to significantly improve the efficiency of operations against the background of a sharp increase in inflation increases the risks of small credit institutions.
+                            </p>
+                            
+                            <p class="bookmark" name="app">Application</p>
+                            
+                            <p>
+								1 In 2021, the volume of mortgage securitization more than 1.5 times exceeded the results of a record 2020 (620 billion rubles from January to November 2021 against 374 billion rubles in 2020).
+                            </p>
+                            <p>
+								2 " Preferential mortgage at 7 %", "Family mortgage", "Far Eastern mortgage", "Rural mortgage", etc.
+                            </p>
+                            <p>
+								3 According to the Expert RA agency estimates, disbursements under state programs of concessional lending to SMEs decreased from RUB 1.4 trillion in 2020 to RUB 750 billion in 2021, as a number of programs introduced to eliminate the consequences of the pandemic (in particular, FOT-0 and FOT 2.0) were curtailed in 2021. In addition, the limit under the "1,734" program was selected by banks in the first half of 2021 and has not been increased since.
+                            </p>
+                            <p>
+								4 Starting from August 2017, the Federal Tax Service annually updates the unified register of SME entities, as a result of which a significant number of organizations that have lost the status of an SME entity are excluded from it for the third year in a row. This negatively affects the volume of the SME loan portfolio and, as a result, leads to an increase in the volume of loans to large businesses.
+                            </p>
+                        </section>
+                    </main>
+                    <footer>
+                        <section class="share">
+                            <strong>Share this event</strong>
+                            <ul>
+                                <li data-channel="facebook"><i class="fab fa-facebook-f" style="color: gray;"></i></li>
+                                <li data-channel="youtube"><i class="fab fa-youtube" style="color: gray;"></i></li>
+                                <li data-channel="instagram"><i class="fab fa-instagram" style="color: gray;"></i></li>
+                                <li data-channel="telegram"><i class="fab fa-telegram" style="color: gray;"></i></li>
+                            </ul>
+                        </section>
+                        <section class="realted">
+                            <strong>Realted events</strong>
+                            <ul>
+                                <li><a href="">Banking Sector Health Index for October 1, 2021</a></li>
+                                <li><a href="">ESG-banking for the 1st half of 2021: Green Book. Chapter 1</a></li>
+                                <li><a href="">Banking Sector Health Index as of July 1, 2021</a></li>
+                            </ul>
+                        </section>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <header>
+            <div class="logo">
+                <img src="../images/icons/investportal-light.png" alt="InvestPortal" />
+            </div>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            <main>
+                <a href="" target="_blank"><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="../images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank"><img src="../images/icons/socials/4-foot.png" alt="SN" /></a>
+            </main>
+        </header>
+        <main>
+            <div id="category_menu">
+                <a href="#" class="catname">Low</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Search for Investors</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Analytics</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Evaluation and Audit</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+        </main>
+    </footer>
+    <div id="chat-lightbox" class="lightbox-closed">
+        <header>
+          <img src="https://img.icons8.com/windows/32/627182/macos-close.png" alt="Close"/>
+        </header>
+        <main class="chat">
+          <div id="header">
+            <div class="consultant-cont">
+              <img src="https://img.icons8.com/bubbles/50/000000/girl-with-compass.png" id="avatar" align="left"/>
+              <span id="firstname">Alise Kaminskaya</span>
+              <span id="staff">Caring consultant</span>
+            </div>
+          </div>
+          <div id="content">
+            <section id="message" data-eventer="sender">
+              <span>12:00</span>
+              <main>
+                Hello! On your portal, is it possible to issue a profitable loan for small businesses in electronic transactions with objects?
+              </main>
+            </section>
+            <section id="message" data-eventer="inbox">
+              <span>12:02</span>
+              <main>
+                Of course! In our database there are dozens of partner banks that are ready to help on our portal not  with obtaining a loan for SMEs, but with the introduction of a whole range of corporate banking services, depending on your business activity, for which you are going to buy an object;-)
+              </main>
+            </section>
+          </div>
+          <div id="footer">
+            <textarea id="message" placeholder="Input this message and but on Enter"></textarea>
+          </div>
+        </main>
+      </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/analytics/view.js"></script>
+</body>
+</html>
