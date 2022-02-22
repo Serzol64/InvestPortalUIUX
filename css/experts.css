@@ -120,6 +120,52 @@
   margin-left: 7%;
 }
 
+#search-footer > ul li input {
+    position: absolute;
+    left: -9999px;
+}
+
+#search-footer > ul li input + label{
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+#search-footer > ul li input + label:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #bec4c6;
+    background-color: #bec4c6;
+    border-radius: 2px;
+}
+
+#search-footer > ul li input:checked + label:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
 @media all and (max-width: 414px){
 	#experts { height: calc(800px * 9); }
 	#consultQ {
